@@ -82,6 +82,7 @@ export interface GlobalPalette {
   blue900: Color
   blueVibrant: Color
   magentaVibrant: Color
+  purple: Color
   purple900: Color
   networkEthereum: Color
   networkOptimism: Color
@@ -100,7 +101,7 @@ export const colors: GlobalPalette = {
   gray150: '#D2D9EE',
   gray200: '#B8C0DC',
   gray250: '#A6AFCA',
-  gray300: '#98A1C0',
+  gray300: '#98a1c0',
   gray350: '#888FAB',
   gray400: '#7780A0',
   gray450: '#6B7594',
@@ -173,6 +174,7 @@ export const colors: GlobalPalette = {
   blueVibrant: '#587BFF',
   // TODO: add magenta 50-900
   magentaVibrant: '#FC72FF',
+  purple: '#D300FF',
   purple900: '#1C0337',
   // TODO: add all other vibrant variations
   networkEthereum: '#627EEA',

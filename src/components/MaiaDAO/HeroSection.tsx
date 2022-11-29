@@ -1,6 +1,6 @@
 // @ts-ignore
 import { Text } from 'rebass'
-import styled from 'styled-components/macro'
+import styled, { useTheme } from 'styled-components/macro'
 
 import backgroundImage from '../../assets/images/maia-hero-bg.jpg'
 import { ButtonPrimary } from '../Button'
@@ -63,24 +63,28 @@ const HeroButton = styled(ButtonPrimary)`
   border-radius: 11px;
   padding: 16px 30px;
   font-size: 18px;
-  width: 150px;
+  width: max-content;
 `
 
 export default function HeroSection() {
+  const theme = useTheme()
   return (
     <HeroSectionContainer>
       <HeroSectionContent>
-        <Text fontSize={80} fontWeight={600} lineHeight={1} color={'textPrimary'}>
+        <Text fontSize={80} fontWeight={600} lineHeight={1} color={theme.textPrimary}>
           Maia DAO
         </Text>
-        <Text fontSize={24} lineHeight={1.25} fontWeight={300} color={'textSecondary'}>
+        <Text fontSize={24} lineHeight={1.25} fontWeight={300} color={theme.textPrimary} paddingRight={48}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac accumsan ligula. Praesent eget egestas orci.
           Lorem ipsum dolor sit amet.
+          <br />
+          <br />
+          (general description of ecosystem placeholder)
         </Text>
-        <HeroButton>Open App</HeroButton>
+        <HeroButton>Read More</HeroButton>
       </HeroSectionContent>
       <HeroSectionImage>
-        <Parallax speedDivider={6.5} invert={true}>
+        <Parallax speedDivider={16} invert={true}>
           <img
             src="https://maiadao-front-1id71tint-binomio.vercel.app/static/media/bg-section3.a43dbe35.png"
             alt="placeholder"

@@ -23,22 +23,22 @@ export const PageWrapper = styled.div`
 `
 
 export const WidePageWrapper = styled.div`
-    max-width: 1300px;
-    width: 100%;
+  max-width: 1400px;
+  width: 100%;
 `
 
 export const WideContentWrapper = styled.div`
-    max-width: 1920px;
-    width: 100%;
-    padding: 0 60px;
-    
-    @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
-        padding: 0 20px;
-    }
-    
-    @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-        padding: 0 8px;
-    }
+  max-width: 1920px;
+  width: 100%;
+  padding: 0 60px;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    padding: 0 20px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    padding: 0 8px;
+  }
 `
 
 // Mostly copied from `AppBody` but it was getting too hard to maintain backwards compatibility.

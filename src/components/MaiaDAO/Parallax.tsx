@@ -32,7 +32,7 @@ export default class Parallax extends React.Component<any, any> {
         'background-position': '50% 0',
         'background-repeat': 'no-repeat',
         'will-change': 'transform',
-        transition: 'transform 0.5s ease',
+        transition: 'transform 1.1s ease',
         transform: 'translate3d(0px, 0px, 0px)',
       },
       invert: props.invert ?? false,

@@ -1,13 +1,20 @@
-import HeroSection from "../../components/MaiaDAO/HeroSection";
-import {WidePageWrapper} from "../../components/swap/styleds";
+import HermesSection from '../../components/MaiaDAO/HermesSection'
+import HeroSection from '../../components/MaiaDAO/HeroSection'
+import MaiaFooter from '../../components/MaiaDAO/MaiaFooter'
+import MaiaPartners from '../../components/MaiaDAO/MaiaPartners'
+import MaiaSection from '../../components/MaiaDAO/MaiaSection'
+import { WidePageWrapper } from '../../components/swap/styleds'
 
 export default function MaiaDAO() {
-
-    return (
-        <>
-            <HeroSection/>
-            <WidePageWrapper>
-
-            </WidePageWrapper>
-        </>)
+  return (
+    <>
+      <HeroSection />
+      <WidePageWrapper>
+        <HermesSection />
+        <MaiaSection />
+        <MaiaPartners />
+      </WidePageWrapper>
+      <MaiaFooter />
+    </>
+  )
 }
