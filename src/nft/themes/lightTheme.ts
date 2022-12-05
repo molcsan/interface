@@ -24,7 +24,7 @@ export const lightTheme: Theme = {
     violet: vars.color.violet400,
 
     textPrimary: vars.color.gray900,
-    textSecondary: vars.color.gray500,
+    textSecondary: '#A9A9A9',
     textTertiary: vars.color.gray300,
   },
   shadows: {

@@ -1,8 +1,10 @@
-import Card, { LightCard } from 'components/Card'
+import Card from 'components/Card'
 import { Text } from 'rebass'
-import styled from 'styled-components/macro'
+import styled, { useTheme } from 'styled-components/macro'
 
+import { ChevronRightIcon } from '../../nft/components/icons'
 import { colors } from '../../theme/colors'
+import { ButtonSecondary } from '../Button'
 
 export const HermesGrid = styled.div`
   display: grid;
@@ -22,6 +24,43 @@ export const HermesImageCard = styled(Card)`
     width: 100%;
     height: auto;
     object-fit: contain;
+  }
+`
+
+export const HermesTitle = styled(Text)`
+  font-weight: 700;
+  font-size: 58px;
+  padding-bottom: 18px;
+  line-height: 1.1;
+  padding-top: 6px;
+`
+
+export const HermesContent = styled.div`
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+`
+
+export const HermesSmall = styled(Text)`
+  color: #d300ff;
+  font-size: 16px;
+  margin-bottom: -4px;
+`
+
+export const HermesButton = styled(ButtonSecondary)`
+  border-radius: 11px;
+  padding: 12px 16px 12px 24px;
+  font-size: 19px;
+  width: max-content;
+  margin-top: 18px;
+  color: #d300ff;
+  border-color: #d300ff;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    margin-left: 2px;
   }
 `
 
@@ -58,6 +97,8 @@ export const StatSubtitle = styled(Text)`
 `
 
 export default function HermesSection() {
+  const theme = useTheme()
+
   return (
     <>
       <HermesGrid>
@@ -67,8 +108,18 @@ export default function HermesSection() {
             alt="Hermes"
           />
         </HermesImageCard>
-        <LightCard></LightCard>
-        <LightCard></LightCard>
+        <HermesContent>
+          <HermesSmall>Hermes protocol</HermesSmall>
+          <HermesTitle>Leverage existing DeFi tools</HermesTitle>
+          <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55}>
+            We are updating the existing mechanics to provide a better user experience with new features. The
+            architecture will be modular and the code will be modern and follow the latest standards and best practices
+            for smart contract development.
+          </Text>
+          <HermesButton>
+            Swap <ChevronRightIcon />
+          </HermesButton>
+        </HermesContent>
       </HermesGrid>
       <StatsGrid>
         <StatCol>

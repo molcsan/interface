@@ -262,7 +262,7 @@ export const colorsLight: Palette = {
   backgroundScrolledSurface: opacify(72, colors.white),
 
   textPrimary: colors.gray900,
-  textSecondary: colors.gray400,
+  textSecondary: '#A9A9A9',
   textTertiary: colors.gray300,
 
   accentAction: colors.pink400,
@@ -326,7 +326,7 @@ export const colorsDark: Palette = {
   backgroundScrolledSurface: opacify(72, colors.gray900),
 
   textPrimary: colors.white,
-  textSecondary: colors.gray300,
+  textSecondary: '#A9A9A9',
   textTertiary: colors.gray500,
 
   accentAction: colors.blue400,

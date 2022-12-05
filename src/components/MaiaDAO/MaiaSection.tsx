@@ -1,7 +1,19 @@
-import { LightCard } from 'components/Card'
-import styled from 'styled-components/macro'
+import { Text } from 'rebass'
+import styled, { useTheme } from 'styled-components/macro'
 
-import { HermesGrid, HermesImageCard, StatCol, StatsGrid, StatSubtitle, StatTitle } from './HermesSection'
+import { ChevronRightIcon } from '../../nft/components/icons'
+import {
+  HermesButton,
+  HermesContent,
+  HermesGrid,
+  HermesImageCard,
+  HermesSmall,
+  HermesTitle,
+  StatCol,
+  StatsGrid,
+  StatSubtitle,
+  StatTitle,
+} from './HermesSection'
 
 const MaiaGrid = styled(HermesGrid)`
   grid-template-columns: 4fr 3fr;
@@ -13,12 +25,28 @@ const MaiaImageCard = styled(HermesImageCard)`
   grid-row: 1 / 3;
 `
 
+const MaiaContent = styled(HermesContent)`
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+`
+
 export default function MaiaSection() {
+  const theme = useTheme()
+
   return (
     <div style={{ margin: '100px auto' }}>
       <MaiaGrid>
-        <LightCard></LightCard>
-        <LightCard></LightCard>
+        <MaiaContent>
+          <HermesSmall>Maia</HermesSmall>
+          <HermesTitle>Maia is the gateway to yields of DeFi!</HermesTitle>
+          <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55}>
+            Maia aims to be a one stop shop for different financial instruments, a fully fledged trading hub with Hermes
+            being the first piece of the puzzle. In order to sustainably bootstrap our surrounding ecosystem.
+          </Text>
+          <HermesButton>
+            Swap <ChevronRightIcon />
+          </HermesButton>
+        </MaiaContent>
         <MaiaImageCard>
           <img
             src="https://2821986188-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzN5op6AIOO7GYYtq1RRY%2Fuploads%2FgxZWWDbKaNkZgS48kk2p%2Fhermes.png?alt=media&token=392ca665-652f-4009-ab37-df8e319bb85f"
