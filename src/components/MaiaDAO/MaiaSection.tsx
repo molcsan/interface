@@ -38,7 +38,7 @@ export default function MaiaSection() {
       <MaiaGrid>
         <MaiaContent>
           <HermesSmall>Maia</HermesSmall>
-          <HermesTitle>Maia is the gateway to yields of DeFi!</HermesTitle>
+          <HermesTitle>The gateway to yields of DeFi!</HermesTitle>
           <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55}>
             Maia aims to be a one stop shop for different financial instruments, a fully fledged trading hub with Hermes
             being the first piece of the puzzle. In order to sustainably bootstrap our surrounding ecosystem.
