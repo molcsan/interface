@@ -30,7 +30,7 @@ export const HermesImageCard = styled(Card)`
 export const HermesTitle = styled(Text)`
   font-weight: 700;
   font-size: 58px;
-  padding-bottom: 18px;
+  padding-bottom: 6px;
   line-height: 1.1;
   padding-top: 6px;
 `
@@ -53,7 +53,7 @@ export const HermesButton = styled(ButtonSecondary)`
   padding: 12px 16px 12px 24px;
   font-size: 19px;
   width: max-content;
-  margin-top: 18px;
+  margin-top: 24px;
   color: #d300ff;
   border-color: #d300ff;
 

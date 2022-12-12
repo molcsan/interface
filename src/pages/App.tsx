@@ -27,7 +27,7 @@ import { RedirectDuplicateTokenIds } from './AddLiquidity/redirects'
 import { RedirectDuplicateTokenIdsV2 } from './AddLiquidityV2/redirects'
 import Earn from './Earn'
 import Manage from './Earn/Manage'
-import MaiaDAO from "./MaiaDAO";
+import MaiaDAO from './MaiaDAO'
 import MigrateV2 from './MigrateV2'
 import MigrateV2Pair from './MigrateV2/MigrateV2Pair'
 import Pool from './Pool'
@@ -72,7 +72,7 @@ const BodyWrapper = styled.div`
 
 const HeaderWrapper = styled.div<{ scrolledState?: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}
-  background-color: ${({ theme, scrolledState }) => scrolledState && theme.backgroundSurface};
+  background-color: ${({ theme, scrolledState }) => (scrolledState ? theme.backgroundSurface : 'rgb(19, 23, 39)')};
   border-bottom: ${({ theme, scrolledState }) => scrolledState && `1px solid ${theme.backgroundOutline}`};
   width: 100%;
   justify-content: space-between;
