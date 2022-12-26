@@ -2,13 +2,18 @@ import Card from 'components/Card'
 import { Text } from 'rebass'
 import styled, { useTheme } from 'styled-components/macro'
 
+import CoinImage1 from "../../assets/images/maia/coin-1.png";
+import CoinImage2 from "../../assets/images/maia/coin-2.png";
+import CoinImage3 from "../../assets/images/maia/coin-3.png";
+import CoinImage4 from "../../assets/images/maia/coin-4.png";
 import { ChevronRightIcon } from '../../nft/components/icons'
 import { colors } from '../../theme/colors'
 import { ButtonSecondary } from '../Button'
+import Levitating from "./Levitating";
 
 export const HermesGrid = styled.div`
   display: grid;
-  grid-template-columns: 3fr 4fr;
+  grid-template-columns: 4fr 3fr;
   grid-gap: 32px;
   margin: 16px 0;
   width: 100%;
@@ -17,7 +22,7 @@ export const HermesGrid = styled.div`
 
 export const HermesImageCard = styled(Card)`
   position: relative;
-  grid-column: 1 / 2;
+  grid-column: 2 / 4;
   grid-row: 1 / 3;
 
   img {
@@ -36,7 +41,7 @@ export const HermesTitle = styled(Text)`
 `
 
 export const HermesContent = styled.div`
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
   grid-row: 1 / 3;
   display: flex;
   flex-direction: column;
@@ -72,6 +77,20 @@ export const StatsGrid = styled.div`
   margin: 120px auto;
   width: 100%;
   max-width: 1100px;
+  position: relative;
+`
+
+export const HermesCoin = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  img {
+    max-width: 96px;
+    max-height: 96px;
+    width: 100%;
+    object-fit: contain;
+  }
 `
 
 export const StatCol = styled.div`
@@ -102,13 +121,13 @@ export default function HermesSection() {
   return (
     <>
       <HermesGrid>
-        <HermesImageCard>
+        <HermesImageCard data-aos="fade-up" data-aos-duration="500" data-aos-delay="200" data-aos-anchor-placement="top-center">
           <img
             src="https://2821986188-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzN5op6AIOO7GYYtq1RRY%2Fuploads%2FgxZWWDbKaNkZgS48kk2p%2Fhermes.png?alt=media&token=392ca665-652f-4009-ab37-df8e319bb85f"
             alt="Hermes"
           />
         </HermesImageCard>
-        <HermesContent>
+        <HermesContent data-aos="fade-up" data-aos-duration="500" data-aos-anchor-placement="top-center">
           <HermesSmall>Hermes protocol</HermesSmall>
           <HermesTitle>Leverage existing DeFi tools</HermesTitle>
           <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55}>
@@ -122,6 +141,26 @@ export default function HermesSection() {
         </HermesContent>
       </HermesGrid>
       <StatsGrid>
+        <Levitating top={-50} left={0}>
+          <HermesCoin>
+            <img src={CoinImage1} alt="Hermes" />
+          </HermesCoin>
+        </Levitating>
+        <Levitating top={-50} right={0}>
+          <HermesCoin>
+            <img src={CoinImage4} alt="Hermes" />
+          </HermesCoin>
+        </Levitating>
+        <Levitating top={80} left={0}>
+          <HermesCoin>
+            <img src={CoinImage2} alt="Hermes" />
+          </HermesCoin>
+        </Levitating>
+        <Levitating top={75} right={0}>
+          <HermesCoin>
+            <img src={CoinImage3} alt="Hermes" />
+          </HermesCoin>
+        </Levitating>
         <StatCol>
           <StatTitle>17.20 %</StatTitle>
           <StatSubtitle>Apr</StatSubtitle>

@@ -16,18 +16,16 @@ import {
 } from './HermesSection'
 
 const MaiaGrid = styled(HermesGrid)`
-  grid-template-columns: 4fr 3fr;
+  grid-template-columns: 3fr 4fr;
 `
 
 const MaiaImageCard = styled(HermesImageCard)`
   position: relative;
-  grid-column: 2 / 4;
-  grid-row: 1 / 3;
+  grid-column: 1 / 2;
 `
 
 const MaiaContent = styled(HermesContent)`
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
+  grid-column: 2 / 3;
 `
 
 export default function MaiaSection() {
@@ -36,7 +34,7 @@ export default function MaiaSection() {
   return (
     <div style={{ margin: '100px auto' }}>
       <MaiaGrid>
-        <MaiaContent>
+        <MaiaContent data-aos="fade-up" data-aos-duration="500" data-aos-anchor-placement="top-center">
           <HermesSmall>Maia</HermesSmall>
           <HermesTitle>The gateway to yields of DeFi!</HermesTitle>
           <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55}>
@@ -47,7 +45,7 @@ export default function MaiaSection() {
             Swap <ChevronRightIcon />
           </HermesButton>
         </MaiaContent>
-        <MaiaImageCard>
+        <MaiaImageCard data-aos="fade-up" data-aos-duration="500" data-aos-delay="200" data-aos-anchor-placement="top-center">
           <img
             src="https://2821986188-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzN5op6AIOO7GYYtq1RRY%2Fuploads%2FgxZWWDbKaNkZgS48kk2p%2Fhermes.png?alt=media&token=392ca665-652f-4009-ab37-df8e319bb85f"
             alt="Hermes"

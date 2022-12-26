@@ -1,15 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-// const ParallaxBackground = styled.div`
-//   width: 100%;
-//   top: 0;
-//   bottom: 0;
-//   background-size: cover;
-//   background-position: 50% 0;
-//   background-repeat: no-repeat;
-// `
-
 const ParallaxContent = styled.div``
 
 interface ConstructorParams {

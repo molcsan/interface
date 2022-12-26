@@ -10,8 +10,8 @@ export default function MaiaDAO() {
     <>
       <HeroSection />
       <WidePageWrapper>
-        <HermesSection />
         <MaiaSection />
+        <HermesSection />
         <MaiaPartners />
       </WidePageWrapper>
       <MaiaFooter />

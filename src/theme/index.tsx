@@ -340,4 +340,8 @@ body {
 :root {
   ${({ theme }) => (theme.darkMode ? cssStringFromTheme(darkTheme) : cssStringFromTheme(lightTheme))}
 }
+
+[data-aos='fade-up'] {
+  transform: translateY(20px);
+}
 `
