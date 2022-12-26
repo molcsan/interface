@@ -1,4 +1,3 @@
-// @ts-ignore
 import { Text } from 'rebass'
 import styled, { useTheme } from 'styled-components/macro'
 

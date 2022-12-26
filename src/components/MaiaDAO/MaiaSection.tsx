@@ -1,7 +1,10 @@
 import { Text } from 'rebass'
 import styled, { useTheme } from 'styled-components/macro'
 
+import CoinImage4 from '../../assets/images/maia/coin-4.png'
+import CoinImage5 from '../../assets/images/maia/coin-5.png'
 import { ChevronRightIcon } from '../../nft/components/icons'
+import { HermesCoin } from './HermesSection'
 import {
   HermesButton,
   HermesContent,
@@ -14,6 +17,7 @@ import {
   StatSubtitle,
   StatTitle,
 } from './HermesSection'
+import Levitating from './Levitating'
 
 const MaiaGrid = styled(HermesGrid)`
   grid-template-columns: 3fr 4fr;
@@ -32,7 +36,12 @@ export default function MaiaSection() {
   const theme = useTheme()
 
   return (
-    <div style={{ margin: '100px auto' }}>
+    <div style={{ position: 'relative', margin: '0 auto', paddingTop: '100px' }}>
+      <Levitating top={-50} left={-75}>
+        <HermesCoin>
+          <img src={CoinImage4} alt="Hermes" />
+        </HermesCoin>
+      </Levitating>
       <MaiaGrid>
         <MaiaContent data-aos="fade-up" data-aos-duration="500" data-aos-anchor-placement="top-center">
           <HermesSmall>Maia</HermesSmall>
@@ -45,12 +54,22 @@ export default function MaiaSection() {
             Swap <ChevronRightIcon />
           </HermesButton>
         </MaiaContent>
-        <MaiaImageCard data-aos="fade-up" data-aos-duration="500" data-aos-delay="200" data-aos-anchor-placement="top-center">
+        <MaiaImageCard
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="200"
+          data-aos-anchor-placement="top-center"
+        >
           <img
             src="https://2821986188-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzN5op6AIOO7GYYtq1RRY%2Fuploads%2FgxZWWDbKaNkZgS48kk2p%2Fhermes.png?alt=media&token=392ca665-652f-4009-ab37-df8e319bb85f"
             alt="Hermes"
           />
         </MaiaImageCard>
+        <Levitating bottom={-70} right={-95}>
+          <HermesCoin>
+            <img src={CoinImage5} alt="Hermes" />
+          </HermesCoin>
+        </Levitating>
       </MaiaGrid>
       <StatsGrid>
         <StatCol>
