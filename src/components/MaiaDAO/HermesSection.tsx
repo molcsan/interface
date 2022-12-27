@@ -73,7 +73,7 @@ export const StatsGrid = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-gap: 16px;
-  margin: 120px auto;
+  margin: 120px auto 320px;
   width: 100%;
   max-width: 1100px;
   position: relative;
