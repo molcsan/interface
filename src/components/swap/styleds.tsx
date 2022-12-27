@@ -25,6 +25,7 @@ export const PageWrapper = styled.div`
 export const WidePageWrapper = styled.div`
   max-width: 1400px;
   width: 100%;
+  margin: 0 auto;
 `
 
 export const WideContentWrapper = styled.div`

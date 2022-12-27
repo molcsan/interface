@@ -6,6 +6,9 @@ const FooterContainer = styled.ul`
   gap: 16px;
   padding: 0;
   margin: 0;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
 `
 
 const FooterCell = styled.li`

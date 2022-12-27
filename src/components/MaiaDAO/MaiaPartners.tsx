@@ -7,7 +7,7 @@ const PartnerGrid = styled.div`
   grid-gap: 40px;
   grid-template-columns: repeat(4, 1fr);
   margin: 0 auto 120px;
-  max-width: 800px;
+  max-width: 650px;
 `
 const PartnerCard = styled.div`
   display: flex;
