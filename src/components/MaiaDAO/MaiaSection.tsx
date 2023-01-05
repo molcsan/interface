@@ -32,21 +32,43 @@ const MaiaContent = styled(HermesContent)`
   grid-column: 2 / 3;
 `
 
+const FirstCoin = styled.div`
+  position: absolute;
+  top: -50px;
+  left: -75px;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xxl}px`}) {
+    left: 10px;
+  }
+`
+
+const SecondCoin = styled.div`
+  position: absolute;
+  bottom: -50px;
+  right: -95px;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xxl}px`}) {
+    right: 10px;
+  }
+`
+
 export default function MaiaSection() {
   const theme = useTheme()
 
   return (
     <div style={{ position: 'relative', margin: '0 auto', paddingTop: '100px' }}>
-      <Levitating top={-50} left={-75}>
-        <HermesCoin>
-          <img src={CoinImage4} alt="Hermes" />
-        </HermesCoin>
-      </Levitating>
+      <FirstCoin>
+        <Levitating offsetOfCycle={0.5}>
+          <HermesCoin>
+            <img src={CoinImage4} alt="Hermes" />
+          </HermesCoin>
+        </Levitating>
+      </FirstCoin>
       <MaiaGrid>
         <MaiaContent data-aos="fade-up" data-aos-duration="500" data-aos-anchor-placement="top-center">
           <HermesSmall>Maia</HermesSmall>
           <HermesTitle>The gateway to yields of DeFi!</HermesTitle>
-          <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55}>
+          <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55} marginBottom={24}>
             Maia aims to be a one stop shop for different financial instruments, a fully fledged trading hub with Hermes
             being the first piece of the puzzle. In order to sustainably bootstrap our surrounding ecosystem.
           </Text>
@@ -65,11 +87,13 @@ export default function MaiaSection() {
             alt="Hermes"
           />
         </MaiaImageCard>
-        <Levitating bottom={-70} right={-95}>
-          <HermesCoin>
-            <img src={CoinImage5} alt="Hermes" />
-          </HermesCoin>
-        </Levitating>
+        <SecondCoin>
+          <Levitating offsetOfCycle={0.75}>
+            <HermesCoin>
+              <img src={CoinImage5} alt="Hermes" />
+            </HermesCoin>
+          </Levitating>
+        </SecondCoin>
       </MaiaGrid>
       <StatsGrid>
         <StatCol>

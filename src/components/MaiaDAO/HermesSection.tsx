@@ -16,6 +16,11 @@ export const HermesGrid = styled.div`
   width: 100%;
   grid-template-rows: 1fr 1fr;
   position: relative;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 `
 
 export const HermesImageCard = styled(Card)`
@@ -28,6 +33,20 @@ export const HermesImageCard = styled(Card)`
     height: auto;
     object-fit: contain;
   }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      max-width: 500px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
 `
 
 export const HermesTitle = styled(Text)`
@@ -36,6 +55,10 @@ export const HermesTitle = styled(Text)`
   padding-bottom: 6px;
   line-height: 1.1;
   padding-top: 6px;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    font-size: 42px;
+  }
 `
 
 export const HermesContent = styled.div`
@@ -44,6 +67,11 @@ export const HermesContent = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
 `
 
 export const HermesSmall = styled(Text)`
@@ -54,29 +82,31 @@ export const HermesSmall = styled(Text)`
 
 export const HermesButton = styled(ButtonSecondary)`
   border-radius: 11px;
-  padding: 12px 16px 12px 24px;
+  padding: 12px 24px 12px 24px;
   font-size: 19px;
   width: max-content;
-  margin-top: 24px;
   color: #d300ff;
   border-color: #d300ff;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+
+  &:hover {
+    color: #869eff;
+
+    svg {
+      transform: translateX(4px);
+      color: #869eff;
+    }
+  }
 
   svg {
     width: 22px;
     height: 22px;
-    margin-left: 2px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    right: -8px;
+    margin-left: -4px;
   }
-`
-
-export const StatsGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 16px;
-  margin: 120px auto 320px;
-  width: 100%;
-  max-width: 1100px;
-  position: relative;
 `
 
 export const HermesCoin = styled.div`
@@ -84,6 +114,9 @@ export const HermesCoin = styled.div`
   align-items: center;
   justify-content: center;
   filter: blur(2px);
+  pointer-events: none;
+  user-focus: none;
+  user-select: none;
 
   img {
     max-width: 128px;
@@ -91,6 +124,23 @@ export const HermesCoin = styled.div`
     width: 100%;
     object-fit: contain;
     opacity: 0.65;
+  }
+`
+
+export const StatsGrid = styled.div`
+  display: flex;
+  grid-gap: 16px;
+  margin: 200px auto 320px;
+  width: 100%;
+  position: relative;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    gap: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 100px auto 160px;
+    justify-items: center;
   }
 `
 
@@ -103,17 +153,39 @@ export const StatCol = styled.div`
   height: 100%;
   padding: 16px;
   border-radius: 12px;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    width: 230px;
+  }
 `
 
 export const StatTitle = styled(Text)`
   font-size: 42px;
   font-weight: 700;
   color: ${colors.purple};
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    font-size: 27px;
+  }
 `
 
 export const StatSubtitle = styled(Text)`
   font-size: 16px;
   font-weight: 700;
+`
+
+const ThirdCoin = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: -65px;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xxl}px`}) {
+    left: 25px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xl}px`}) {
+    bottom: -50px;
+  }
 `
 
 export default function HermesSection() {
@@ -136,7 +208,7 @@ export default function HermesSection() {
         <HermesContent data-aos="fade-up" data-aos-duration="500" data-aos-anchor-placement="top-center">
           <HermesSmall>Hermes protocol</HermesSmall>
           <HermesTitle>Leverage existing DeFi tools</HermesTitle>
-          <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55}>
+          <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55} marginBottom={24}>
             We are updating the existing mechanics to provide a better user experience with new features. The
             architecture will be modular and the code will be modern and follow the latest standards and best practices
             for smart contract development.
@@ -144,11 +216,13 @@ export default function HermesSection() {
           <HermesButton>
             Swap <ChevronRightIcon />
           </HermesButton>
-          <Levitating bottom={0} left={-65}>
-            <HermesCoin>
-              <img style={{ maxWidth: 90, opacity: 0.4 }} src={CoinImage3} alt="Hermes" />
-            </HermesCoin>
-          </Levitating>
+          <ThirdCoin>
+            <Levitating>
+              <HermesCoin>
+                <img style={{ maxWidth: 90, opacity: 0.4 }} src={CoinImage3} alt="Hermes" />
+              </HermesCoin>
+            </Levitating>
+          </ThirdCoin>
         </HermesContent>
       </HermesGrid>
       <StatsGrid>

@@ -1,8 +1,8 @@
 import { Text } from 'rebass'
-import styled, { useTheme } from 'styled-components/macro'
+import styled from 'styled-components/macro'
 
 import backgroundImage from '../../assets/images/maia-hero-bg.jpg'
-import { ButtonPrimary } from '../Button'
+import { HermesButton } from './HermesSection'
 import Parallax from './Parallax'
 
 const HeroSectionContainer = styled.div`
@@ -30,6 +30,20 @@ const HeroSectionContainer = styled.div`
     height: 100%;
     z-index: -2;
   }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xxl}px`}) {
+    padding: 72px 32px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    &:before {
+      background-position-x: right;
+    }
+  }
 `
 
 const HeroSectionContent = styled.div`
@@ -39,6 +53,36 @@ const HeroSectionContent = styled.div`
   width: 50%;
   row-gap: 24px;
   position: relative;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+  }
+`
+
+const HeroSectionTitle = styled(Text)`
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1;
+  color: ${({ theme }) => theme.textPrimary};
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    font-size: 64px;
+  }
+`
+
+const HeroSectionDescription = styled(Text)`
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 300;
+  color: ${({ theme }) => theme.textPrimary};
+  padding-right: 48px;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xxl}px`}) {
+    font-size: 18px;
+    padding-right: 20px;
+  }
 `
 
 const HeroSectionImage = styled.div`
@@ -56,31 +100,23 @@ const HeroSectionImage = styled.div`
       rgba(17, 17, 26, 0.7) 0px 48px 56px;
     border: 1px solid rgba(0, 0, 0, 0.4);
   }
-`
 
-const HeroButton = styled(ButtonPrimary)`
-  border-radius: 11px;
-  padding: 16px 30px;
-  font-size: 18px;
-  width: max-content;
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    width: 100%;
+    max-width: 500px;
+  }
 `
 
 export default function HeroSection() {
-  const theme = useTheme()
   return (
     <HeroSectionContainer>
       <HeroSectionContent>
-        <Text fontSize={80} fontWeight={600} lineHeight={1} color={theme.textPrimary}>
-          Maia DAO
-        </Text>
-        <Text fontSize={24} lineHeight={1.25} fontWeight={300} color={theme.textPrimary} paddingRight={48}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac accumsan ligula. Praesent eget egestas orci.
-          Lorem ipsum dolor sit amet.
-          <br />
-          <br />
-          (general description of ecosystem placeholder)
-        </Text>
-        <HeroButton>Read More</HeroButton>
+        <HeroSectionTitle>Maia DAO</HeroSectionTitle>
+        <HeroSectionDescription>
+          The decentralized platform that brings you the best in class trading experience. With Maia, you can trade any
+          asset securely and transparently, without the need for intermediaries.
+        </HeroSectionDescription>
+        <HermesButton>Read More</HermesButton>
       </HeroSectionContent>
       <HeroSectionImage>
         <Parallax speedDivider={16} invert={true}>

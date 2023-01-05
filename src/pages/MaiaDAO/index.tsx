@@ -11,6 +11,7 @@ import { WidePageWrapper } from '../../components/swap/styleds'
 
 const MaiaPage = styled.div`
   position: relative;
+  overflow: hidden;
 `
 
 const FooterPoetry = styled.div<{ left?: string; right?: string; bottom?: string; top?: string }>`
@@ -21,12 +22,14 @@ const FooterPoetry = styled.div<{ left?: string; right?: string; bottom?: string
   left: ${({ left }) => (left ? left : 'unset')};
   display: flex;
   z-index: 0;
+  pointer-events: none;
+  user-focus: none;
+  user-select: none;
 
   img {
-    width: 100%;
     height: 100%;
     object-fit: contain;
-    max-width: 655px;
+    width: 655px;
     opacity: 0.75;
   }
 `
@@ -41,11 +44,11 @@ export default function MaiaDAO() {
         <MaiaPartners />
       </WidePageWrapper>
       <MaiaFooter />
-      <FooterPoetry bottom={'0px'} right={'0px'}>
+      <FooterPoetry bottom={'0px'} left={'calc(50% + 325px)'}>
         <img src={Poetry1} alt="Poetry" />
       </FooterPoetry>
-      <FooterPoetry bottom={'0px'} left={'0px'}>
-        <img src={Poetry3} style={{ maxWidth: 635 }} alt="Poetry" />
+      <FooterPoetry bottom={'0px'} right={'calc(50% + 325px)'}>
+        <img src={Poetry3} alt="Poetry" />
       </FooterPoetry>
     </MaiaPage>
   )
