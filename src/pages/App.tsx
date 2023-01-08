@@ -1,6 +1,6 @@
 import { initializeAnalytics, OriginApplication, sendAnalyticsEvent, Trace, user } from '@uniswap/analytics'
 import { CustomUserProperties, EventName, getBrowser, PageName } from '@uniswap/analytics-events'
-import AOS from 'aos';
+import AOS from 'aos'
 import Loader from 'components/Loader'
 import TopLevelModals from 'components/TopLevelModals'
 import { useFeatureFlagsIsLoaded } from 'featureFlags'
@@ -170,7 +170,9 @@ export default function App() {
   useEffect(() => {
     // Anchor placement example: top-top means the top of the element hits the top of the viewport then animation starts
     //AOS.init({once: true, mirror: false})
-    AOS.init()
+    AOS.init({
+      anchorPlacement: 'center-top',
+    })
   }, [])
 
   return (

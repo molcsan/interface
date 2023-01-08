@@ -9,6 +9,11 @@ const FooterContainer = styled.ul`
   justify-content: center;
   position: relative;
   z-index: 1;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    gap: 0;
+    justify-content: space-between;
+  }
 `
 
 const FooterCell = styled.li`

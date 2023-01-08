@@ -1,4 +1,3 @@
-import Card from 'components/Card'
 import { Text } from 'rebass'
 import styled, { useTheme } from 'styled-components/macro'
 
@@ -19,11 +18,11 @@ export const HermesGrid = styled.div`
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
   }
 `
 
-export const HermesImageCard = styled(Card)`
+export const HermesImageCard = styled.div`
   position: relative;
   grid-column: 2 / 4;
   grid-row: 1 / 3;
@@ -42,7 +41,7 @@ export const HermesImageCard = styled(Card)`
       width: 100%;
       height: auto;
       object-fit: contain;
-      max-width: 500px;
+      max-width: 400px;
       margin: 0 auto;
       display: block;
     }
@@ -58,6 +57,10 @@ export const HermesTitle = styled(Text)`
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     font-size: 42px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    font-size: 27px;
   }
 `
 
@@ -125,6 +128,16 @@ export const HermesCoin = styled.div`
     object-fit: contain;
     opacity: 0.65;
   }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    img {
+      max-width: 96px;
+    }
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    max-width: 64px;
+  }
 `
 
 export const StatsGrid = styled.div`
@@ -134,13 +147,21 @@ export const StatsGrid = styled.div`
   width: 100%;
   position: relative;
 
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xxl}px`}) {
+    margin: 150px auto 200px;
+  }
+
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     gap: 0;
     display: grid;
+    margin: 100px auto 160px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    margin: 100px auto 160px;
     justify-items: center;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    margin: 40px auto 64px;
   }
 `
 
@@ -152,10 +173,18 @@ export const StatCol = styled.div`
   width: 100%;
   height: 100%;
   padding: 16px;
-  border-radius: 12px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     width: 230px;
+    height: 160px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    padding: 2px;
   }
 `
 
@@ -186,6 +215,12 @@ const ThirdCoin = styled.div`
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xl}px`}) {
     bottom: -50px;
   }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    left: unset;
+    right: 25px;
+    bottom: -20px;
+  }
 `
 
 export default function HermesSection() {
@@ -194,18 +229,13 @@ export default function HermesSection() {
   return (
     <>
       <HermesGrid>
-        <HermesImageCard
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="200"
-          data-aos-anchor-placement="top-center"
-        >
+        <HermesImageCard data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
           <img
             src="https://2821986188-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzN5op6AIOO7GYYtq1RRY%2Fuploads%2FgxZWWDbKaNkZgS48kk2p%2Fhermes.png?alt=media&token=392ca665-652f-4009-ab37-df8e319bb85f"
             alt="Hermes"
           />
         </HermesImageCard>
-        <HermesContent data-aos="fade-up" data-aos-duration="500" data-aos-anchor-placement="top-center">
+        <HermesContent data-aos="fade-up" data-aos-duration="500">
           <HermesSmall>Hermes protocol</HermesSmall>
           <HermesTitle>Leverage existing DeFi tools</HermesTitle>
           <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55} marginBottom={24}>
@@ -232,11 +262,11 @@ export default function HermesSection() {
         </StatCol>
         <StatCol>
           <StatTitle>$1,000,000</StatTitle>
-          <StatSubtitle>Total Value Locked (TVL)</StatSubtitle>
+          <StatSubtitle>Locked (TVL)</StatSubtitle>
         </StatCol>
         <StatCol>
           <StatTitle>76,456</StatTitle>
-          <StatSubtitle>Number Of Holders</StatSubtitle>
+          <StatSubtitle>Holders</StatSubtitle>
         </StatCol>
         <StatCol>
           <StatTitle>$0.05</StatTitle>

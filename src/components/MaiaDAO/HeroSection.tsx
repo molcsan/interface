@@ -38,7 +38,6 @@ const HeroSectionContainer = styled.div`
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     flex-direction: column;
     align-items: center;
-    gap: 50px;
 
     &:before {
       background-position-x: right;
@@ -58,6 +57,7 @@ const HeroSectionContent = styled.div`
     text-align: center;
     align-items: center;
     width: 100%;
+    height: 50%;
   }
 `
 
@@ -69,6 +69,10 @@ const HeroSectionTitle = styled(Text)`
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     font-size: 64px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    font-size: 48px;
   }
 `
 
@@ -82,6 +86,15 @@ const HeroSectionDescription = styled(Text)`
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xxl}px`}) {
     font-size: 18px;
     padding-right: 20px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
+    max-width: 550px;
+    padding-right: 0;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    font-size: 16px;
   }
 `
 
@@ -104,6 +117,7 @@ const HeroSectionImage = styled.div`
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     width: 100%;
     max-width: 500px;
+    height: 50%;
   }
 `
 

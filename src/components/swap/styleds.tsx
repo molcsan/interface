@@ -26,7 +26,15 @@ export const WidePageWrapper = styled.div`
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 100px 40px 0;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xl}px`}) {
+    padding-top: 20px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    padding: 20px 16px 0;
+  }
 `
 
 // Mostly copied from `AppBody` but it was getting too hard to maintain backwards compatibility.
