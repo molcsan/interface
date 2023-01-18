@@ -91,7 +91,7 @@ export default function MaiaSection() {
         </MaiaContent>
         <MaiaImageCard data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
           <img
-            src="https://2821986188-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzN5op6AIOO7GYYtq1RRY%2Fuploads%2FgxZWWDbKaNkZgS48kk2p%2Fhermes.png?alt=media&token=392ca665-652f-4009-ab37-df8e319bb85f"
+            src="https://cdn.discordapp.com/attachments/1055440737149386763/1065141039372976189/maia-2.png"
             alt="Hermes"
           />
         </MaiaImageCard>

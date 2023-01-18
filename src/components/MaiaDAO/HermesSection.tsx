@@ -3,7 +3,6 @@ import styled, { useTheme } from 'styled-components/macro'
 
 import CoinImage3 from '../../assets/images/maia/coin-3.png'
 import { ChevronRightIcon } from '../../nft/components/icons'
-import { colors } from '../../theme/colors'
 import { ButtonSecondary } from '../Button'
 import Levitating from './Levitating'
 
@@ -78,7 +77,7 @@ export const HermesContent = styled.div`
 `
 
 export const HermesSmall = styled(Text)`
-  color: #d300ff;
+  color: #dd3aff;
   font-size: 16px;
   margin-bottom: -4px;
 `
@@ -88,8 +87,8 @@ export const HermesButton = styled(ButtonSecondary)`
   padding: 12px 24px 12px 24px;
   font-size: 19px;
   width: max-content;
-  color: #d300ff;
-  border-color: #d300ff;
+  color: #dd3aff;
+  border-color: #dd3aff;
   transition: all 0.3s ease-in-out;
   position: relative;
 
@@ -189,9 +188,10 @@ export const StatCol = styled.div`
 `
 
 export const StatTitle = styled(Text)`
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 700;
-  color: ${colors.purple};
+  color: #dd3aff;
+  letter-spacing: 0.04em;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     font-size: 27px;

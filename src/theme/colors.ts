@@ -174,7 +174,7 @@ export const colors: GlobalPalette = {
   blueVibrant: '#587BFF',
   // TODO: add magenta 50-900
   magentaVibrant: '#FC72FF',
-  purple: '#D300FF',
+  purple: '#DD3AFF',
   purple900: '#1C0337',
   // TODO: add all other vibrant variations
   networkEthereum: '#627EEA',
