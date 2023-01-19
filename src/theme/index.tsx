@@ -334,7 +334,8 @@ body {
   */
   /*background: linear-gradient(rgb(13, 17, 77) 0%, rgb(7, 8, 22) 85%, rgb(5, 5, 72) 100%);*/
   /*background: linear-gradient(rgb(30, 30, 92) 0%,  rgb(7, 8, 22) 45%, rgb(7, 8, 22) 65%, rgb(13, 17, 77) 100%);*/
-  background: linear-gradient(rgb(41, 41, 152) 0%,  rgb(7, 8, 22) 45%, rgb(7, 8, 22) 65%, rgb(13, 17, 77) 100%);
+  //background: linear-gradient(rgb(41, 41, 152) 0%,  rgb(7, 8, 22) 45%, rgb(7, 8, 22) 65%, rgb(13, 17, 77) 100%);
+  background: linear-gradient(rgb(41,41,152) 0%,rgb(7,8,22) 45%,rgb(7,8,22) 58%,rgb(13,17,77) 100%);
 }
 
 :root {

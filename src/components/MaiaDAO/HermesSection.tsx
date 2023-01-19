@@ -145,6 +145,7 @@ export const StatsGrid = styled.div`
   margin: 200px auto 320px;
   width: 100%;
   position: relative;
+  justify-content: space-between;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xxl}px`}) {
     margin: 150px auto 200px;
@@ -169,9 +170,8 @@ export const StatCol = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: auto;
   height: 100%;
-  padding: 16px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     width: 230px;
@@ -181,17 +181,13 @@ export const StatCol = styled.div`
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
     width: 100%;
   }
-
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-    padding: 2px;
-  }
 `
 
 export const StatTitle = styled(Text)`
   font-size: 44px;
   font-weight: 700;
   color: #dd3aff;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     font-size: 27px;

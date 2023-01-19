@@ -85,9 +85,7 @@ const HeaderWrapper = styled.div<{ scrolledState?: boolean }>`
   z-index: ${Z_INDEX.sticky};
 `
 
-const Marginer = styled.div`
-  margin-top: 5rem;
-`
+const Marginer = styled.div``
 
 function getCurrentPageFromLocation(locationPathname: string): PageName | undefined {
   switch (locationPathname) {
