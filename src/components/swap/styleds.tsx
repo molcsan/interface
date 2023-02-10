@@ -26,7 +26,7 @@ export const WidePageWrapper = styled.div`
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  padding: 100px 40px 0;
+  padding: 0 40px 0;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xl}px`}) {
     padding-top: 20px;

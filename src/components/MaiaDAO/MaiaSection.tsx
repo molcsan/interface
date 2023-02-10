@@ -4,6 +4,7 @@ import styled, { useTheme } from 'styled-components/macro'
 import CoinImage4 from '../../assets/images/maia/coin-4.png'
 import CoinImage5 from '../../assets/images/maia/coin-5.png'
 import { ChevronRightIcon } from '../../nft/components/icons'
+import Banner, { BannerImage, BannerText, BannerTitle } from './Banner'
 import { HermesCoin } from './HermesSection'
 import {
   HermesButton,
@@ -65,6 +66,8 @@ const SecondCoin = styled.div`
   }
 `
 
+const MAIA_IMAGE = 'https://cdn.discordapp.com/attachments/1055440737149386763/1073001897595768922/maia-coins-image.jpg'
+
 export default function MaiaSection() {
   const theme = useTheme()
 
@@ -105,22 +108,34 @@ export default function MaiaSection() {
       </MaiaGrid>
       <StatsGrid>
         <StatCol>
-          <StatTitle>17.20 %</StatTitle>
           <StatSubtitle>Apr</StatSubtitle>
+          <StatTitle>17.20 %</StatTitle>
         </StatCol>
         <StatCol>
-          <StatTitle>$1,000,000</StatTitle>
           <StatSubtitle>Locked (TVL)</StatSubtitle>
+          <StatTitle>$1,000,000</StatTitle>
         </StatCol>
         <StatCol>
-          <StatTitle>76,456</StatTitle>
           <StatSubtitle>Holders</StatSubtitle>
+          <StatTitle>76,456</StatTitle>
         </StatCol>
         <StatCol>
+          <StatSubtitle>
+            <span style={{ color: '#dd3aff' }}>$MAIA</span> price
+          </StatSubtitle>
           <StatTitle>$0.05</StatTitle>
-          <StatSubtitle>$HERMES Price</StatSubtitle>
         </StatCol>
       </StatsGrid>
+      <Banner>
+        <BannerImage src={MAIA_IMAGE} />
+        <BannerTitle>
+          Governed by <span style={{ color: '#dd3aff' }}>$maia</span>
+        </BannerTitle>
+        <BannerText>
+          The governance token that lets you take control of the future. Acting as the backbone for MaiaDAO, $Maia is
+          the key to unlocking a transparent, secure, and decentralized financial system.
+        </BannerText>
+      </Banner>
     </div>
   )
 }

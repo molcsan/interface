@@ -5,6 +5,7 @@ import CoinImage3 from '../../assets/images/maia/coin-3.png'
 import { ChevronRightIcon } from '../../nft/components/icons'
 import { ButtonSecondary } from '../Button'
 import Levitating from './Levitating'
+import TransparentCard, { TransparentCardDescription, TransparentCardTitle } from './TransparentCard'
 
 export const HermesGrid = styled.div`
   display: grid;
@@ -59,6 +60,7 @@ export const HermesTitle = styled(Text)`
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    line-height: 1.3;
     font-size: 27px;
   }
 `
@@ -140,63 +142,85 @@ export const HermesCoin = styled.div`
 `
 
 export const StatsGrid = styled.div`
-  display: flex;
-  grid-gap: 16px;
-  margin: 200px auto 320px;
+  display: grid;
+  gap: 25px;
+  margin: 100px auto 25px;
   width: 100%;
   position: relative;
-  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xxl}px`}) {
-    margin: 150px auto 200px;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
-    gap: 0;
-    display: grid;
-    margin: 100px auto 160px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
-    margin: 40px auto 64px;
+    margin: 40px auto 16px;
+    gap: 16px;
   }
 `
 
-export const StatCol = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  height: 100%;
+export const StatCol = styled(TransparentCard)`
+  height: 150px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
-    width: 230px;
-    height: 160px;
+    width: 100%;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
-    width: 100%;
+    height: 120px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    height: 100px;
   }
 `
 
 export const StatTitle = styled(Text)`
-  font-size: 44px;
-  font-weight: 700;
+  font-weight: 600;
   color: #dd3aff;
-  letter-spacing: 0.02em;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.65px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
-    font-size: 27px;
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    font-size: 32px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    font-size: 22px;
   }
 `
 
 export const StatSubtitle = styled(Text)`
-  font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+  color: ${({ theme }) => theme.textSecondary};
+`
+
+export const CardGrid = styled.div`
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 100px;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+  }
 `
 
 const ThirdCoin = styled.div`
@@ -253,22 +277,47 @@ export default function HermesSection() {
       </HermesGrid>
       <StatsGrid>
         <StatCol>
-          <StatTitle>17.20 %</StatTitle>
           <StatSubtitle>Apr</StatSubtitle>
+          <StatTitle>17.20 %</StatTitle>
         </StatCol>
         <StatCol>
-          <StatTitle>$1,000,000</StatTitle>
           <StatSubtitle>Locked (TVL)</StatSubtitle>
+          <StatTitle>$1,000,000</StatTitle>
         </StatCol>
         <StatCol>
-          <StatTitle>76,456</StatTitle>
           <StatSubtitle>Holders</StatSubtitle>
+          <StatTitle>76,456</StatTitle>
         </StatCol>
         <StatCol>
+          <StatSubtitle>
+            <span style={{ color: '#dd3aff' }}>$HERMES</span> price
+          </StatSubtitle>
           <StatTitle>$0.05</StatTitle>
-          <StatSubtitle>$HERMES Price</StatSubtitle>
         </StatCol>
       </StatsGrid>
+      <CardGrid>
+        <TransparentCard>
+          <TransparentCardTitle>
+            LOCK YOUR <span style={{ color: '#dd3aff' }}>$HERMES</span>
+          </TransparentCardTitle>
+          <TransparentCardDescription>
+            Get ready to cash in on some awesome perks! Just park your <span style={{ color: '#dd3aff' }}>$HERMES</span>{' '}
+            tokens for a hot minute and you`ll receive a shower of <span style={{ color: '#dd3aff' }}>$veHERMES</span>.
+            This little move will open up a world of fun on Hermes Omnichain.
+          </TransparentCardDescription>
+          <HermesButton>Read more</HermesButton>
+        </TransparentCard>
+        <TransparentCard>
+          <TransparentCardTitle>ECO BRIBES</TransparentCardTitle>
+          <TransparentCardDescription>
+            It`s time to get paid for being environmentally conscious! Get your{' '}
+            <span style={{ color: '#dd3aff' }}>$veHERMES</span> and say goodbye to any dilution from emissions. But
+            wait, there`s more! You get to vote on which pools get the <span style={{ color: '#dd3aff' }}>$HERMES</span>{' '}
+            emissions and score some sweet sweet fees and bribes. Talk about a win-win!
+          </TransparentCardDescription>
+          <HermesButton>Read more</HermesButton>
+        </TransparentCard>
+      </CardGrid>
     </>
   )
 }

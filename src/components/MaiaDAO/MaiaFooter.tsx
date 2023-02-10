@@ -158,7 +158,7 @@ export default function MaiaFooter() {
             </FooterColumnItem>
           </FooterColumn>
         </FooterColumns>
-        <p style={{ color: 'white', opacity: 0.5, fontSize: '12px' }}>© 2023 MaiaDAO 420 blaze it</p>
+        <p style={{ color: 'white', opacity: 0.5, fontSize: '12px' }}>© 2023 MaiaDAO</p>
       </FooterContainer>
     </Footer>
   )
