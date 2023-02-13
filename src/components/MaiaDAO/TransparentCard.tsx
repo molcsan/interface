@@ -12,7 +12,7 @@ const MaiaCardWrapper = styled.div`
   justify-content: flex-start;
   position: relative;
   //background-color: rgba(130, 131, 141, 0.07); -- Marshall's recommendation
-  background-color: rgba(134, 158, 255, 0.03);
+  background-color: rgba(134, 158, 255, 0.065);
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
     padding: 20px 18px;
