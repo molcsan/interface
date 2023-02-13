@@ -64,6 +64,11 @@ const SecondCoin = styled.div`
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xxl}px`}) {
     right: 10px;
   }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    bottom: 100px;
+    right: -25px;
+  }
 `
 
 const MAIA_IMAGE = 'https://cdn.discordapp.com/attachments/1055440737149386763/1073001897595768922/maia-coins-image.jpg'

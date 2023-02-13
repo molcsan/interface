@@ -8,10 +8,10 @@ const Footer = styled.div`
   //border-top: 1px solid rgba(255, 255, 255, 0.14);
   padding-top: 50px;
   background-color: #0b0f40;
-  padding-bottom: 5rem;
+  padding-bottom: 80px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
-    margin-top: 120px;
+    margin-top: 80px;
   }
 `
 

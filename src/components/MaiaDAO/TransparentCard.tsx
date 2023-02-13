@@ -2,8 +2,7 @@ import React from 'react'
 import { Text } from 'rebass'
 import styled from 'styled-components/macro'
 
-const TransparentCardWrapper = styled.div`
-  background: transparent;
+const MaiaCardWrapper = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.14);
   padding: 22px;
   border-radius: 11px;
@@ -12,16 +11,22 @@ const TransparentCardWrapper = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   position: relative;
+  //background-color: rgba(130, 131, 141, 0.07); -- Marshall's recommendation
+  background-color: rgba(134, 158, 255, 0.03);
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
-    padding: 16px;
+    padding: 20px 18px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    padding: 18px 16px;
   }
 `
 
-export const TransparentCardTitle = styled(Text)`
+export const MaiaCardTitle = styled(Text)`
   font-weight: 700;
   font-size: 48px;
-  line-height: 1.2;
+  line-height: 1.15;
   color: #fff;
   padding-bottom: 24px;
 
@@ -30,24 +35,28 @@ export const TransparentCardTitle = styled(Text)`
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
-    line-height: 1.3;
     font-size: 26px;
+    padding-bottom: 12px;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-    font-size: 21px;
+    font-size: 24px;
   }
 `
 
-export const TransparentCardDescription = styled(Text)`
+export const MaiaCardDescription = styled(Text)`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.55;
   color: #a9a9a9;
   padding-bottom: 30px;
   flex-grow: 1;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    padding-bottom: 24px;
+  }
 `
 
 export default function TransparentCard({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <TransparentCardWrapper className={className}>{children}</TransparentCardWrapper>
+  return <MaiaCardWrapper className={className}>{children}</MaiaCardWrapper>
 }

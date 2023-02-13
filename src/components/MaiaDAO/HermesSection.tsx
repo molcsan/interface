@@ -5,7 +5,7 @@ import CoinImage3 from '../../assets/images/maia/coin-3.png'
 import { ChevronRightIcon } from '../../nft/components/icons'
 import { ButtonSecondary } from '../Button'
 import Levitating from './Levitating'
-import TransparentCard, { TransparentCardDescription, TransparentCardTitle } from './TransparentCard'
+import TransparentCard, { MaiaCardDescription, MaiaCardTitle } from './TransparentCard'
 
 export const HermesGrid = styled.div`
   display: grid;
@@ -50,18 +50,17 @@ export const HermesImageCard = styled.div`
 
 export const HermesTitle = styled(Text)`
   font-weight: 700;
-  font-size: 58px;
-  padding-bottom: 6px;
-  line-height: 1.1;
-  padding-top: 6px;
+  font-size: 52px;
+  padding-bottom: 24px;
+  padding-top: 12px;
+  line-height: 1.15;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     font-size: 42px;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
-    line-height: 1.3;
-    font-size: 27px;
+    font-size: 32px;
   }
 `
 
@@ -197,7 +196,7 @@ export const StatTitle = styled(Text)`
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-    font-size: 22px;
+    font-size: 24px;
   }
 `
 
@@ -218,8 +217,9 @@ export const CardGrid = styled.div`
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto;
     gap: 16px;
+    margin-bottom: 60px;
   }
 `
 
@@ -239,7 +239,7 @@ const ThirdCoin = styled.div`
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
     left: unset;
     right: 25px;
-    bottom: -20px;
+    bottom: 40px;
   }
 `
 
@@ -297,24 +297,24 @@ export default function HermesSection() {
       </StatsGrid>
       <CardGrid>
         <TransparentCard>
-          <TransparentCardTitle>
+          <MaiaCardTitle>
             LOCK YOUR <span style={{ color: '#dd3aff' }}>$HERMES</span>
-          </TransparentCardTitle>
-          <TransparentCardDescription>
+          </MaiaCardTitle>
+          <MaiaCardDescription>
             Get ready to cash in on some awesome perks! Just park your <span style={{ color: '#dd3aff' }}>$HERMES</span>{' '}
             tokens for a hot minute and you`ll receive a shower of <span style={{ color: '#dd3aff' }}>$veHERMES</span>.
             This little move will open up a world of fun on Hermes Omnichain.
-          </TransparentCardDescription>
+          </MaiaCardDescription>
           <HermesButton>Read more</HermesButton>
         </TransparentCard>
         <TransparentCard>
-          <TransparentCardTitle>ECO BRIBES</TransparentCardTitle>
-          <TransparentCardDescription>
+          <MaiaCardTitle>ECO BRIBES</MaiaCardTitle>
+          <MaiaCardDescription>
             It`s time to get paid for being environmentally conscious! Get your{' '}
             <span style={{ color: '#dd3aff' }}>$veHERMES</span> and say goodbye to any dilution from emissions. But
             wait, there`s more! You get to vote on which pools get the <span style={{ color: '#dd3aff' }}>$HERMES</span>{' '}
             emissions and score some sweet sweet fees and bribes. Talk about a win-win!
-          </TransparentCardDescription>
+          </MaiaCardDescription>
           <HermesButton>Read more</HermesButton>
         </TransparentCard>
       </CardGrid>

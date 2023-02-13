@@ -38,7 +38,7 @@ const generateEasedLinearGradient = function (
 
 const BannerWrapper = styled(TransparentCard)`
   position: relative;
-  padding: 60px 70px;
+  padding: 100px 70px 60px 70px;
   display: flex;
   flex-direction: column;
   z-index: 1;
@@ -48,17 +48,18 @@ const BannerWrapper = styled(TransparentCard)`
   margin-bottom: 140px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xl}px`}) {
-    padding: 20px 35px;
+    padding: 60px 35px;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
     height: 275px;
     aspect-ratio: unset;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-    padding: 30px 25px;
+    padding: 20px 18px;
+    height: auto;
   }
 
   &:before {
@@ -71,6 +72,10 @@ const BannerWrapper = styled(TransparentCard)`
     z-index: -1;
     // CSS linear gradient is very
     background-image: ${generateEasedLinearGradient(30, 270, easeSinOut, 3)};
+
+    @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+      display: none;
+    }
   }
 `
 
@@ -91,19 +96,23 @@ export const BannerImage = styled.img`
     width: 750px;
     left: unset;
   }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    display: none;
+  }
 `
 
 export const BannerTitle = styled.h2`
   font-weight: 700;
   font-size: 48px;
-  line-height: 1.3;
+  line-height: 1.15;
   color: #ffffff;
-  margin-bottom: 32px;
   width: 100%;
   text-transform: uppercase;
+  margin: 0 0 24px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xl}px`}) {
-    margin-bottom: 0;
+    //margin-bottom: 0;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
@@ -111,9 +120,8 @@ export const BannerTitle = styled.h2`
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-    font-size: 27px;
-    margin: 0;
-    line-height: 1.15;
+    margin: 0 0 12px;
+    font-size: 24px;
   }
 `
 
@@ -121,11 +129,11 @@ export const BannerText = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.55;
-  max-width: 450px;
+  max-width: 550px;
   color: #a9a9a9;
+  margin: 0;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-    line-height: 1.35;
   }
 `
 

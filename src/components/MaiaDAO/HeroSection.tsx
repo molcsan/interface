@@ -59,6 +59,14 @@ const HeroSectionContent = styled.div`
     width: 100%;
     height: 50%;
   }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    row-gap: 12px;
+
+    button {
+      margin-top: 12px;
+    }
+  }
 `
 
 const HeroSectionTitle = styled(Text)`

@@ -44,12 +44,27 @@ const TitleSection = styled.div`
   margin-bottom: 48px;
 `
 
+const Title = styled(Text)`
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: ${({ theme }) => theme.textPrimary};
+  margin: 0;
+  padding-bottom: 24px;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    line-height: 1.15;
+    font-size: 32px;
+    padding-bottom: 12px;
+  }
+`
+
 const Description = styled.p`
   font-size: 18px;
-  line-height: 1.35;
+  line-height: 1.55;
   color: ${({ theme }) => theme.textSecondary};
   max-width: 480px;
-  margin-top: 12px;
+  margin: 0;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
     font-size: 16px;
@@ -61,9 +76,7 @@ export default function MaiaPartners() {
   return (
     <>
       <TitleSection>
-        <Text fontSize={48} fontWeight={600} lineHeight={1} color={theme.textPrimary}>
-          Partners
-        </Text>
+        <Title>Partners</Title>
         <Description>
           MaiaDAO is a community-driven project. We are grateful to our partners for their support. (Placeholder)
         </Description>
