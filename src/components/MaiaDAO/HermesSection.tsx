@@ -183,7 +183,7 @@ export const StatCol = styled(TransparentCard)`
 export const StatTitle = styled(Text)`
   font-weight: 600;
   color: #dd3aff;
-  font-size: 46px;
+  font-size: 42px;
   line-height: 1;
   letter-spacing: -0.65px;
   flex-grow: 1;
