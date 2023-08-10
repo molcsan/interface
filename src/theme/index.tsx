@@ -4,6 +4,7 @@ import styled, {
   createGlobalStyle,
   css,
   DefaultTheme,
+  ThemeProps,
   ThemeProvider as StyledComponentsThemeProvider,
 } from 'styled-components/macro'
 
@@ -18,6 +19,10 @@ import { opacify } from './utils'
 export * from './components'
 
 type TextProps = Omit<TextPropsOriginal, 'css'>
+
+type CustomThemeProps = ThemeProps<DefaultTheme> & {
+  modalOpen?: boolean
+}
 
 export const MEDIA_WIDTHS = {
   deprecated_upToExtraSmall: 500,
@@ -325,17 +330,12 @@ html {
 }
 
 a {
- color: ${({ theme }) => theme.deprecated_blue1}; 
+ color: ${({ theme }) => theme.deprecated_blue1};
 }
 
 body {
-  /*
-    TODO: decide if we want to use this and if so, which of them
-  */
-  /*background: linear-gradient(rgb(13, 17, 77) 0%, rgb(7, 8, 22) 85%, rgb(5, 5, 72) 100%);*/
-  /*background: linear-gradient(rgb(30, 30, 92) 0%,  rgb(7, 8, 22) 45%, rgb(7, 8, 22) 65%, rgb(13, 17, 77) 100%);*/
-  //background: linear-gradient(rgb(41, 41, 152) 0%,  rgb(7, 8, 22) 45%, rgb(7, 8, 22) 65%, rgb(13, 17, 77) 100%);
   background: linear-gradient(rgb(41,41,152) 0%,rgb(7,8,22) 45%,rgb(7,8,22) 58%,rgb(13,17,77) 100%);
+  overflow: ${(props: CustomThemeProps) => (props.modalOpen ? 'hidden' : 'auto')};
 }
 
 :root {

@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import { Text } from 'rebass'
 import styled from 'styled-components/macro'
-import { useTheme } from 'styled-components/macro'
+
+import { ThemedGlobalStyle } from '../../theme'
+import Modal from './Modal'
 
 const PartnerGrid = styled.div`
   display: grid;
@@ -15,24 +18,68 @@ const PartnerGrid = styled.div`
   }
 `
 const PartnerCard = styled.div`
+  --glow-duration: 0.5s;
+  --glow-color: #dd3aff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 40px 0;
   cursor: pointer;
+  border-radius: 50%;
+  aspect-ratio: 1;
+
+  transition: var(--glow-duration, 0.5s);
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--glow-color, #dd3aff);
+    transition: var(--glow-duration, 0.5s);
+    transform: scale(0.9);
+    z-index: -1;
+  }
+
+  &:hover::before {
+    transform: scale(1.025);
+    box-shadow: 0 0 13px var(--glow-color, #dd3aff);
+  }
+
+  &:hover {
+    color: var(--glow-color, #dd3aff);
+    box-shadow: 0 0 13px var(--glow-color, #dd3aff);
+    text-shadow: 0 0 5px var(--glow-color, #dd3aff);
+  }
 
   img {
     height: 46px;
     width: auto;
-    margin-bottom: 10px;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
     padding: 0;
   }
+`
+
+const PartnerCardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background-color: #0d111c;
+  border: 1px solid rgb(255 255 255 / 5%);
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
 `
 
 const TitleSection = styled.div`
@@ -72,9 +119,21 @@ const Description = styled.p`
 `
 
 export default function MaiaPartners() {
-  const theme = useTheme()
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalContent, setModalContent] = useState('')
+
+  const openModal = (contentComponent: string) => {
+    setModalContent(contentComponent)
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
+
   return (
     <>
+      <ThemedGlobalStyle modalOpen={isModalOpen} />
       <TitleSection>
         <Title>Partners</Title>
         <Description>
@@ -82,49 +141,16 @@ export default function MaiaPartners() {
         </Description>
       </TitleSection>
       <PartnerGrid>
-        <PartnerCard>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Binance_Logo.png/600px-Binance_Logo.png?20201023063027"
-            alt=""
-          />
-          <Text>Binance</Text>
-        </PartnerCard>
-        <PartnerCard>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Binance_Logo.png/600px-Binance_Logo.png?20201023063027"
-            alt=""
-          />
-          <Text>Binance</Text>
-        </PartnerCard>
-        <PartnerCard>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Binance_Logo.png/600px-Binance_Logo.png?20201023063027"
-            alt=""
-          />
-          <Text>Binance</Text>
-        </PartnerCard>
-        <PartnerCard>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Binance_Logo.png/600px-Binance_Logo.png?20201023063027"
-            alt=""
-          />
-          <Text>Binance</Text>
-        </PartnerCard>
-        <PartnerCard>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Binance_Logo.png/600px-Binance_Logo.png?20201023063027"
-            alt=""
-          />
-          <Text>Binance</Text>
-        </PartnerCard>
-        <PartnerCard>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Binance_Logo.png/600px-Binance_Logo.png?20201023063027"
-            alt=""
-          />
-          <Text>Binance</Text>
+        <PartnerCard onClick={() => openModal('Binance')}>
+          <PartnerCardContent>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Binance_Logo.png/600px-Binance_Logo.png?20201023063027"
+              alt=""
+            />
+          </PartnerCardContent>
         </PartnerCard>
       </PartnerGrid>
+      <Modal isOpen={isModalOpen} closeModal={closeModal} contentComponent={modalContent} />
     </>
   )
 }

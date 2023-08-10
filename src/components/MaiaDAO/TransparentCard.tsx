@@ -4,7 +4,7 @@ import styled from 'styled-components/macro'
 
 const MaiaCardWrapper = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 22px;
+  padding: 16px;
   border-radius: 11px;
   display: flex;
   flex-direction: column;
@@ -15,11 +15,11 @@ const MaiaCardWrapper = styled.div`
   background-color: rgba(134, 158, 255, 0.065);
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
-    padding: 20px 18px;
+    padding: 14px 12px;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-    padding: 18px 16px;
+    padding: 12px 10px;
   }
 `
 

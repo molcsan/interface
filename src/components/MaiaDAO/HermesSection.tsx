@@ -165,7 +165,7 @@ export const StatsGrid = styled.div`
 `
 
 export const StatCol = styled(TransparentCard)`
-  height: 150px;
+  height: 120px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
     width: 100%;
@@ -202,7 +202,7 @@ export const StatTitle = styled(Text)`
 
 export const StatSubtitle = styled(Text)`
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
   letter-spacing: -0.2px;
   color: ${({ theme }) => theme.textSecondary};

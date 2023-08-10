@@ -43,10 +43,10 @@ export default function MaiaDAO() {
         <HermesSection />
         <MaiaPartners />
       </WidePageWrapper>
-      <FooterPoetry bottom={'450px'} left={'calc(50% + 325px)'}>
+      <FooterPoetry bottom={'450px'} left={'calc(50% + 500px)'}>
         <img src={Poetry1} alt="Poetry" />
       </FooterPoetry>
-      <FooterPoetry bottom={'450px'} right={'calc(50% + 325px)'}>
+      <FooterPoetry bottom={'450px'} right={'calc(50% + 500px)'}>
         <img src={Poetry3} alt="Poetry" />
       </FooterPoetry>
       <MaiaFooter />
