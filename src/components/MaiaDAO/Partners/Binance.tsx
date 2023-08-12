@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 const Header = styled.div`
   display: flex;
   gap: 40px;
+  align-items: center;
 `
 
 const HeaderImage = styled.img`
@@ -58,12 +59,16 @@ const ContentBlock = styled.div`
     line-height: 1.32;
   }
 
+  span,
   p {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.4;
     margin: 0;
-    padding: 0;
+  }
+
+  p {
+    padding: 0 0 0 20px;
   }
 `
 
@@ -85,7 +90,9 @@ const Binance: FC = () => {
           </p>
         </HeaderContent>
       </Header>
-      <ContentBlock></ContentBlock>
+      <ContentBlock>
+        <span></span>
+      </ContentBlock>
       <ContentBlock>
         <p>Explore liquidity pools across the Balancer ecosystem</p>
         <p>Add and remove liquidity</p>

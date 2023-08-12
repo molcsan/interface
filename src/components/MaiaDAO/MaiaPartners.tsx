@@ -7,10 +7,10 @@ import Modal from './Modal'
 
 const PartnerGrid = styled.div`
   display: grid;
-  grid-gap: 40px;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 0 auto 120px;
-  max-width: 650px;
+  grid-template-columns: repeat(4, 135px);
+  margin: 0 auto;
+  justify-content: center;
+  gap: 72px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
     grid-template-columns: repeat(3, 1fr);
@@ -29,7 +29,6 @@ const PartnerCard = styled.div`
   cursor: pointer;
   border-radius: 50%;
   aspect-ratio: 1;
-
   transition: var(--glow-duration, 0.5s);
   position: relative;
   z-index: 1;
@@ -57,11 +56,18 @@ const PartnerCard = styled.div`
     color: var(--glow-color, #dd3aff);
     box-shadow: 0 0 13px var(--glow-color, #dd3aff);
     text-shadow: 0 0 5px var(--glow-color, #dd3aff);
+
+    img {
+      filter: grayscale(0%);
+      scale: 1.1;
+    }
   }
 
   img {
     height: 46px;
     width: auto;
+    filter: grayscale(100%);
+    transition: all var(--glow-duration, 0.5s);
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
@@ -75,7 +81,7 @@ const PartnerCardContent = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 1;
-  background-color: #0d111c;
+  background-color: rgb(17 21 53);
   border: 1px solid rgb(255 255 255 / 5%);
   border-radius: 50%;
   height: 100%;
@@ -106,17 +112,17 @@ const Title = styled(Text)`
   }
 `
 
-const Description = styled.p`
-  font-size: 18px;
-  line-height: 1.55;
-  color: ${({ theme }) => theme.textSecondary};
-  max-width: 480px;
-  margin: 0;
-
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-    font-size: 16px;
-  }
-`
+// const Description = styled.p`
+//   font-size: 18px;
+//   line-height: 1.55;
+//   color: ${({ theme }) => theme.textSecondary};
+//   max-width: 480px;
+//   margin: 0;
+//
+//   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+//     font-size: 16px;
+//   }
+// `
 
 export default function MaiaPartners() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -131,25 +137,30 @@ export default function MaiaPartners() {
     setIsModalOpen(false)
   }
 
+  const partnerList = []
+  for (let i = 0; i < 8; i++) {
+    partnerList.push(
+      <PartnerCard onClick={() => openModal('Binance')}>
+        <PartnerCardContent>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Binance_Logo.png/600px-Binance_Logo.png?20201023063027"
+            alt=""
+          />
+        </PartnerCardContent>
+      </PartnerCard>
+    )
+  }
+
   return (
     <>
       <ThemedGlobalStyle modalOpen={isModalOpen} />
       <TitleSection>
         <Title>Partners</Title>
-        <Description>
-          MaiaDAO is a community-driven project. We are grateful to our partners for their support. (Placeholder)
-        </Description>
+        {/*<Description>*/}
+        {/*  MaiaDAO is a community-driven project. We are grateful to our partners for their support. (Placeholder)*/}
+        {/*</Description>*/}
       </TitleSection>
-      <PartnerGrid>
-        <PartnerCard onClick={() => openModal('Binance')}>
-          <PartnerCardContent>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Binance_Logo.png/600px-Binance_Logo.png?20201023063027"
-              alt=""
-            />
-          </PartnerCardContent>
-        </PartnerCard>
-      </PartnerGrid>
+      <PartnerGrid>{partnerList}</PartnerGrid>
       <Modal isOpen={isModalOpen} closeModal={closeModal} contentComponent={modalContent} />
     </>
   )

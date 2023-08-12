@@ -23,21 +23,31 @@ const ModalContent = styled.div`
   background-color: rgb(19, 26, 42);
   border-radius: 14px;
   padding: 26px 32px;
-  position: relative;
+  position: absolute;
+  top: 90px;
 `
 
 const ModalCloseButton = styled.button`
   position: absolute;
   top: 20px;
   right: 20px;
-  background: transparent;
+  background: #1c2c51;
   border: none;
   cursor: pointer;
-  color: #fff;
-  font-size: 24px;
   line-height: 1;
   padding: 0;
   z-index: 1;
+  width: 32px;
+  border-radius: 6px;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 `
 
 interface ModalProps {
@@ -63,7 +73,21 @@ const Modal: FC<ModalProps> = ({ isOpen, closeModal, contentComponent }: ModalPr
   return (
     <ModalWrapper>
       <ModalContent>
-        <ModalCloseButton onClick={closeModal}>X</ModalCloseButton>
+        <ModalCloseButton onClick={closeModal}>
+          <svg //X icon
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24" //viewBox="0 0 24 24" is the size of the icon
+            fill="none"
+            stroke="#4C82FB"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="feather feather-x"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </ModalCloseButton>
         <React.Suspense fallback={<div>Loading...</div>}>
           <Content />
         </React.Suspense>

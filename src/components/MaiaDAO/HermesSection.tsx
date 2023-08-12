@@ -93,15 +93,6 @@ export const HermesButton = styled(ButtonSecondary)`
   transition: all 0.3s ease-in-out;
   position: relative;
 
-  &:hover {
-    color: #869eff;
-
-    svg {
-      transform: translateX(4px);
-      color: #869eff;
-    }
-  }
-
   svg {
     width: 22px;
     height: 22px;
@@ -109,6 +100,15 @@ export const HermesButton = styled(ButtonSecondary)`
     position: relative;
     right: -8px;
     margin-left: -4px;
+  }
+
+  &:hover {
+    color: #869eff;
+
+    svg {
+      transform: translateX(4px);
+      color: #869eff;
+    }
   }
 `
 
@@ -206,6 +206,7 @@ export const StatSubtitle = styled(Text)`
   line-height: 1.2;
   letter-spacing: -0.2px;
   color: ${({ theme }) => theme.textSecondary};
+  text-transform: uppercase;
 `
 
 export const CardGrid = styled.div`
