@@ -25,14 +25,10 @@ const MaiaCardWrapper = styled.div`
 
 export const MaiaCardTitle = styled(Text)`
   font-weight: 700;
-  font-size: 48px;
+  font-size: 42px;
   line-height: 1.15;
   color: #fff;
-  padding-bottom: 24px;
-
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
-    font-size: 42px;
-  }
+  padding-bottom: 16px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
     font-size: 26px;
