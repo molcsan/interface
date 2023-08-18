@@ -20,6 +20,10 @@ const HeaderImage = styled.img`
   object-fit: contain;
   display: block;
   object-position: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const HeaderContent = styled.div`
@@ -91,7 +95,9 @@ const Binance: FC = () => {
         </HeaderContent>
       </Header>
       <ContentBlock>
-        <span></span>
+        <span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna ac nibh feugiat imper.
+        </span>
       </ContentBlock>
       <ContentBlock>
         <p>Explore liquidity pools across the Balancer ecosystem</p>

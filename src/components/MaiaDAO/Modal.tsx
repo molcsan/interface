@@ -3,14 +3,14 @@ import styled from 'styled-components/macro'
 
 const ModalWrapper = styled.div`
   position: fixed;
-  z-index: 1000;
+  z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(25px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,13 +18,27 @@ const ModalWrapper = styled.div`
 `
 
 const ModalContent = styled.div`
-  max-width: 800px;
+  position: relative;
+  z-index: 1001;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+`
+
+const ModalWindow = styled.div`
+  max-width: 660px;
   width: 100%;
   background-color: rgb(19, 26, 42);
   border-radius: 14px;
   padding: 26px 32px;
   position: absolute;
   top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width: 768px) {
+    top: 40px;
+  }
 `
 
 const ModalCloseButton = styled.button`
@@ -73,24 +87,26 @@ const Modal: FC<ModalProps> = ({ isOpen, closeModal, contentComponent }: ModalPr
   return (
     <ModalWrapper>
       <ModalContent>
-        <ModalCloseButton onClick={closeModal}>
-          <svg //X icon
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24" //viewBox="0 0 24 24" is the size of the icon
-            fill="none"
-            stroke="#4C82FB"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="feather feather-x"
-          >
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </ModalCloseButton>
-        <React.Suspense fallback={<div>Loading...</div>}>
-          <Content />
-        </React.Suspense>
+        <ModalWindow>
+          <ModalCloseButton onClick={closeModal}>
+            <svg //X icon
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" //viewBox="0 0 24 24" is the size of the icon
+              fill="none"
+              stroke="#4C82FB"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-x"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </ModalCloseButton>
+          <React.Suspense fallback={<div>Loading...</div>}>
+            <Content />
+          </React.Suspense>
+        </ModalWindow>
       </ModalContent>
     </ModalWrapper>
   )
