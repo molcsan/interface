@@ -15,6 +15,7 @@ const PartnerGrid = styled.div`
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
     grid-template-columns: repeat(3, 1fr);
     margin: 0 auto 80px;
+    gap: 24px;
   }
 `
 const PartnerCard = styled.div`
@@ -98,7 +99,7 @@ const TitleSection = styled.div`
 `
 
 const Title = styled(Text)`
-  font-size: 52px;
+  font-size: 42px;
   font-weight: 600;
   line-height: 1.15;
   color: ${({ theme }) => theme.textPrimary};

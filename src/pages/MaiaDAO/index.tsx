@@ -1,7 +1,9 @@
+import React from 'react'
 import styled from 'styled-components/macro'
 
 import Poetry1 from '../../assets/images/maia/poetry-1.png'
 import Poetry3 from '../../assets/images/maia/poetry-3.png'
+import Features from '../../components/MaiaDAO/Features'
 import HermesSection from '../../components/MaiaDAO/HermesSection'
 import HeroSection from '../../components/MaiaDAO/HeroSection'
 import MaiaFooter from '../../components/MaiaDAO/MaiaFooter'
@@ -39,6 +41,7 @@ export default function MaiaDAO() {
     <MaiaPage>
       <HeroSection />
       <WidePageWrapper>
+        <Features />
         <MaiaSection />
         <HermesSection />
         <MaiaPartners />
