@@ -24,21 +24,21 @@ function getCacheDirectory(cacheName) {
 }
 
 module.exports = {
-  eslint: {
-    enable: shouldLintOrTypeCheck,
-    pluginOptions(eslintConfig) {
-      return Object.assign(eslintConfig, {
-        cache: true,
-        cacheLocation: getCacheDirectory('eslint'),
-        ignorePath: '.gitignore',
-        // Use our own eslint/plugins/config, as overrides interfere with caching.
-        // This ensures that `yarn start` and `yarn lint` share one cache.
-        eslintPath: require.resolve('eslint'),
-        resolvePluginsRelativeTo: null,
-        baseConfig: null,
-      })
-    },
-  },
+  // eslint: {
+  //   enable: shouldLintOrTypeCheck,
+  //   pluginOptions(eslintConfig) {
+  //     return Object.assign(eslintConfig, {
+  //       cache: true,
+  //       cacheLocation: getCacheDirectory('eslint'),
+  //       ignorePath: '.gitignore',
+  //       // Use our own eslint/plugins/config, as overrides interfere with caching.
+  //       // This ensures that `yarn start` and `yarn lint` share one cache.
+  //       eslintPath: require.resolve('eslint'),
+  //       resolvePluginsRelativeTo: null,
+  //       baseConfig: null,
+  //     })
+  //   },
+  // },
   typescript: {
     enableTypeChecking: shouldLintOrTypeCheck,
   },

@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="512x512" href="%PUBLIC_URL%/images/512x512_App_Icon.png" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="theme-color" content="#FC72FF" />
+    <meta name="theme-color" content="#b267dd" />
     <meta
       http-equiv="Content-Security-Policy"
       <% if (process.env.REACT_APP_CSP_ALLOW_UNSAFE_EVAL) { %>
@@ -38,13 +38,14 @@
 
     <link rel="preconnect" href="%REACT_APP_AMPLITUDE_PROXY_URL%" />
 
-    <link rel="preload" href="%PUBLIC_URL%/fonts/Basel-Book.woff" as="font" type="font/woff" crossorigin />
-    <link rel="preload" href="%PUBLIC_URL%/fonts/Basel-Medium.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="%PUBLIC_URL%/fonts/OpenSans-Regular.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="%PUBLIC_URL%/fonts/OpenSans-Medium.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="%PUBLIC_URL%/fonts/OpenSans-Light.woff" as="font" type="font/woff" crossorigin />
 
    
     <style>
       * {
-        font-family: 'Basel', sans-serif;
+        font-family: 'Open Sans', sans-serif;
         box-sizing: border-box;
       }
 
@@ -52,28 +53,38 @@
           Explicitly load Basel var from public/ so it does not block LCP's critical path.
         */
       @font-face {
-        font-family: 'Basel';
-        font-weight: 535;
+        font-family: 'Open Sans';
+        font-weight: 500;
         font-style: normal;
         font-display: block;
-        font-named-instance: 'Book';
+        font-named-instance: 'Open Sans';
         src: 
-          url(%PUBLIC_URL%/fonts/Basel-Medium.woff) format('woff');
+          url(%PUBLIC_URL%/fonts/OpenSans-Medium.woff) format('woff');
       }
 
       @font-face {
-        font-family: 'Basel';
-        font-weight: 485;
+        font-family: 'Open Sans';
+        font-weight: 400;
         font-style: normal;
         font-display: block;
-        font-named-instance: 'Book';
+        font-named-instance: 'Open Sans';
         src: 
-          url(%PUBLIC_URL%/fonts/Basel-Book.woff) format('woff');
+          url(%PUBLIC_URL%/fonts/OpenSans-Regular.woff) format('woff');
+      }
+
+      @font-face {
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-style: normal;
+        font-display: block;
+        font-named-instance: 'Open Sans';
+        src:
+          url(%PUBLIC_URL%/fonts/OpenSans-Light.woff) format('woff');
       }
 
       @supports (font-variation-settings: normal) {
         * {
-          font-family: 'Basel', sans-serif;
+          font-family: 'Open Sans', sans-serif;
           
         }
       }
@@ -90,13 +101,15 @@
 
       html {
         font-size: 16px;
-        font-weight: 485;
+        font-weight: 400;
         font-variant: none;
         font-smooth: always;
         text-rendering: optimizeLegibility !important;
         -webkit-font-smoothing: antialiased !important;
         -moz-osx-font-smoothing: grayscale;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        letter-spacing: 0.04em;
+
       }
 
       /* Use this to apply network-specific gradient backgrounds, in RadialGradientByChainUpdater.ts */
@@ -118,16 +131,8 @@
         min-height: 100%;
       }
 
-      @media (prefers-color-scheme: dark) {
-        html {
-          background: linear-gradient(rgb(19, 19, 19) 0%, rgb(19, 19, 19) 100%);
-        }
-      }
-
-      @media (prefers-color-scheme: light) {
-        html {
-          background: radial-gradient(100% 100% at 50% 0%, rgba(255, 184, 226, 0) 0%, rgba(255, 255, 255, 0) 100%), rgb(255, 255, 255);
-        }
+      html {
+          background: linear-gradient(#131A2A 0%, #131A2A);
       }
     </style>
   </head>
