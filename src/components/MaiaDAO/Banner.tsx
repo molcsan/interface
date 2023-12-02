@@ -45,7 +45,6 @@ const BannerWrapper = styled(TransparentCard)`
   border-radius: 11px;
   overflow: hidden;
   aspect-ratio: 13/4.6;
-  margin-bottom: 140px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xl}px`}) {
     padding: 60px 35px;
@@ -54,7 +53,6 @@ const BannerWrapper = styled(TransparentCard)`
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
     height: 275px;
     aspect-ratio: unset;
-    margin-bottom: 60px;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
@@ -108,7 +106,7 @@ export const BannerTitle = styled.h2`
   line-height: 1.15;
   color: #ffffff;
   width: 100%;
-  text-transform: uppercase;
+  //text-transform: uppercase;
   margin: 0 0 24px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xl}px`}) {

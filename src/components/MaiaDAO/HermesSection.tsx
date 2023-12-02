@@ -79,8 +79,9 @@ export const HermesContent = styled.div`
 
 export const HermesSmall = styled(Text)`
   color: #dd3aff;
-  font-size: 16px;
+  font-size: 22px;
   margin-bottom: -4px;
+  font-weight: 500;
 `
 
 export const HermesButton = styled(ButtonSecondary)`
@@ -143,7 +144,7 @@ export const HermesCoin = styled.div`
 export const StatsGrid = styled.div`
   display: grid;
   gap: 25px;
-  margin: 100px auto 25px;
+  margin: 0 auto 25px;
   width: 100%;
   position: relative;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -249,76 +250,83 @@ export default function HermesSection() {
 
   return (
     <>
-      <HermesGrid>
-        <HermesImageCard data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-          <img
-            src="https://2821986188-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzN5op6AIOO7GYYtq1RRY%2Fuploads%2FgxZWWDbKaNkZgS48kk2p%2Fhermes.png?alt=media&token=392ca665-652f-4009-ab37-df8e319bb85f"
-            alt="Hermes"
-          />
-        </HermesImageCard>
-        <HermesContent data-aos="fade-up" data-aos-duration="500">
-          <HermesSmall>Hermes protocol</HermesSmall>
-          <HermesTitle>Leverage existing DeFi tools</HermesTitle>
-          <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55} marginBottom={24}>
-            We are updating the existing mechanics to provide a better user experience with new features. The
-            architecture will be modular and the code will be modern and follow the latest standards and best practices
-            for smart contract development.
-          </Text>
-          <HermesButton>
-            Swap <ChevronRightIcon />
-          </HermesButton>
-          <ThirdCoin>
-            <Levitating>
-              <HermesCoin>
-                <img style={{ maxWidth: 90, opacity: 0.4 }} src={CoinImage3} alt="Hermes" />
-              </HermesCoin>
-            </Levitating>
-          </ThirdCoin>
-        </HermesContent>
-      </HermesGrid>
-      <StatsGrid>
-        <StatCol>
-          <StatSubtitle>Apr</StatSubtitle>
-          <StatTitle>17.20 %</StatTitle>
-        </StatCol>
-        <StatCol>
-          <StatSubtitle>Locked (TVL)</StatSubtitle>
-          <StatTitle>$1,000,000</StatTitle>
-        </StatCol>
-        <StatCol>
-          <StatSubtitle>Holders</StatSubtitle>
-          <StatTitle>76,456</StatTitle>
-        </StatCol>
-        <StatCol>
-          <StatSubtitle>
-            <span style={{ color: '#dd3aff' }}>$HERMES</span> price
-          </StatSubtitle>
-          <StatTitle>$0.05</StatTitle>
-        </StatCol>
-      </StatsGrid>
-      <CardGrid>
-        <TransparentCard>
-          <MaiaCardTitle>
-            LOCK YOUR <span style={{ color: '#dd3aff' }}>$HERMES</span>
-          </MaiaCardTitle>
-          <MaiaCardDescription>
-            Get ready to cash in on some awesome perks! Just park your <span style={{ color: '#dd3aff' }}>$HERMES</span>{' '}
-            tokens for a hot minute and you`ll receive a shower of <span style={{ color: '#dd3aff' }}>$veHERMES</span>.
-            This little move will open up a world of fun on Hermes Omnichain.
-          </MaiaCardDescription>
-          <HermesButton>Read more</HermesButton>
-        </TransparentCard>
-        <TransparentCard>
-          <MaiaCardTitle>ECO BRIBES</MaiaCardTitle>
-          <MaiaCardDescription>
-            It`s time to get paid for being environmentally conscious! Get your{' '}
-            <span style={{ color: '#dd3aff' }}>$veHERMES</span> and say goodbye to any dilution from emissions. But
-            wait, there`s more! You get to vote on which pools get the <span style={{ color: '#dd3aff' }}>$HERMES</span>{' '}
-            emissions and score some sweet sweet fees and bribes. Talk about a win-win!
-          </MaiaCardDescription>
-          <HermesButton>Read more</HermesButton>
-        </TransparentCard>
-      </CardGrid>
+      <div style={{ position: 'relative', margin: '0 auto' }}>
+        <HermesGrid>
+          <HermesImageCard data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+            <img
+              src="https://2821986188-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FzN5op6AIOO7GYYtq1RRY%2Fuploads%2FgxZWWDbKaNkZgS48kk2p%2Fhermes.png?alt=media&token=392ca665-652f-4009-ab37-df8e319bb85f"
+              alt="Hermes"
+            />
+          </HermesImageCard>
+          <HermesContent data-aos="fade-up" data-aos-duration="500">
+            <HermesSmall>Hermes protocol</HermesSmall>
+            <HermesTitle>Leverage existing DeFi tools</HermesTitle>
+            <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55} marginBottom={24}>
+              Hermes Protocol V2 marks a significant evolution from V1, featuring a completely rewritten codebase,
+              enhanced features, and thorough auditing to redefine the DeFi experience. This decentralized and
+              permissionless protocol offers an Omnichain yield and liquidity marketplace, placing the power squarely in
+              the hands of the community. Designed to advance key elements like ve(3,3) mechanics and overcome existing
+              DeFi limitations, Hermes Protocol V2 is geared towards a future-proof DeFi ecosystem.
+            </Text>
+            <HermesButton>
+              Swap <ChevronRightIcon />
+            </HermesButton>
+            <ThirdCoin>
+              <Levitating>
+                <HermesCoin>
+                  <img style={{ maxWidth: 90, opacity: 0.4 }} src={CoinImage3} alt="Hermes" />
+                </HermesCoin>
+              </Levitating>
+            </ThirdCoin>
+          </HermesContent>
+        </HermesGrid>
+      </div>
+      <div>
+        <StatsGrid>
+          <StatCol>
+            <StatSubtitle>Apr</StatSubtitle>
+            <StatTitle>17.20 %</StatTitle>
+          </StatCol>
+          <StatCol>
+            <StatSubtitle>Locked (TVL)</StatSubtitle>
+            <StatTitle>$1,000,000</StatTitle>
+          </StatCol>
+          <StatCol>
+            <StatSubtitle>Holders</StatSubtitle>
+            <StatTitle>76,456</StatTitle>
+          </StatCol>
+          <StatCol>
+            <StatSubtitle>
+              <span style={{ color: '#dd3aff' }}>$HERMES</span> price
+            </StatSubtitle>
+            <StatTitle>$0.05</StatTitle>
+          </StatCol>
+        </StatsGrid>
+        <CardGrid>
+          <TransparentCard>
+            <MaiaCardTitle>
+              BURN YOUR <span style={{ color: '#dd3aff' }}>$HERMES</span>
+            </MaiaCardTitle>
+            <MaiaCardDescription>
+              Burn <span style={{ color: '#dd3aff' }}>$HERMES</span> tokens to unlock{' '}
+              <span style={{ color: '#dd3aff' }}>$bHERMES</span> Gauge, Boost, and Votes, elevating your role in
+              governance and rewards. Deposit into the Burner ERC-4626 Vault for{' '}
+              <span style={{ color: '#dd3aff' }}>$bHERMES</span> shares, offering control over emissions, amplified
+              earnings, and decisive governance influence in the evolving Hermes Protocol ecosystem
+            </MaiaCardDescription>
+            <HermesButton>Read more</HermesButton>
+          </TransparentCard>
+          <TransparentCard>
+            <MaiaCardTitle>LOREM IPSUM</MaiaCardTitle>
+            <MaiaCardDescription>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna ac nibh feugiat
+              imper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna ac nibh
+              feugiat imper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna.
+            </MaiaCardDescription>
+            <HermesButton>Read more</HermesButton>
+          </TransparentCard>
+        </CardGrid>
+      </div>
     </>
   )
 }

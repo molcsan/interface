@@ -135,8 +135,7 @@ export default function HeroSection() {
       <HeroSectionContent>
         <HeroSectionTitle>Maia DAO</HeroSectionTitle>
         <HeroSectionDescription>
-          The decentralized platform that brings you the best in class trading experience. With Maia, you can trade any
-          asset securely and transparently, without the need for intermediaries.
+          Maian ecosystem is one-stop shop for different DeFi native financial instruments, a fully fledged trading hub.
         </HeroSectionDescription>
         <HermesButton>Read More</HermesButton>
       </HeroSectionContent>

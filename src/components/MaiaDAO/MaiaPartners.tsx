@@ -65,7 +65,7 @@ const PartnerCard = styled.div`
   }
 
   img {
-    height: 46px;
+    height: 60px;
     width: auto;
     filter: grayscale(100%);
     transition: all var(--glow-duration, 0.5s);
@@ -143,17 +143,14 @@ export default function MaiaPartners() {
     partnerList.push(
       <PartnerCard onClick={() => openModal('Binance')}>
         <PartnerCardContent>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Binance_Logo.png/600px-Binance_Logo.png?20201023063027"
-            alt=""
-          />
+          <img src="https://maiadao.io/static/media/maia-logo.4a329e0ce7f3b194b1e9.png" alt="" />
         </PartnerCardContent>
       </PartnerCard>
     )
   }
 
   return (
-    <>
+    <div>
       <ThemedGlobalStyle modalOpen={isModalOpen} />
       <TitleSection>
         <Title>Partners</Title>
@@ -163,6 +160,6 @@ export default function MaiaPartners() {
       </TitleSection>
       <PartnerGrid>{partnerList}</PartnerGrid>
       <Modal isOpen={isModalOpen} closeModal={closeModal} contentComponent={modalContent} />
-    </>
+    </div>
   )
 }

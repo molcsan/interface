@@ -27,13 +27,22 @@ export const WidePageWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 420px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xl}px`}) {
     padding-top: 20px;
+    gap: 200px;
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
     padding: 20px 16px 0;
+    gap: 120px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    gap: 80px;
   }
 `
 
@@ -52,13 +61,9 @@ export const ArrowWrapper = styled.div<{ clickable: boolean }>`
   height: 40px;
   width: 40px;
   position: relative;
-  margin-top: -18px;
-  margin-bottom: -18px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: -18px auto;
   background-color: ${({ theme }) => theme.backgroundInteractive};
-  border: 4px solid;
-  border-color: ${({ theme }) => theme.backgroundSurface};
+  border: 4px solid ${({ theme }) => theme.backgroundSurface};
 
   z-index: 2;
   ${({ clickable }) =>

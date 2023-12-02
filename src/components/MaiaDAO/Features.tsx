@@ -1,38 +1,47 @@
 import styled from 'styled-components/macro'
 
+import chainIcon from '../../assets/images/maia/chain.svg'
+import dropIcon from '../../assets/images/maia/drop.svg'
+import globeIcon from '../../assets/images/maia/globe.svg'
+import leafIcon from '../../assets/images/maia/leaf.svg'
+import moneybagIcon from '../../assets/images/maia/moneybag.svg'
+import swapIcon from '../../assets/images/maia/swap.svg'
+
 const FEATURES_DATA: IFeatureProps[] = [
   {
-    icon: 'https://cdn.discordapp.com/attachments/806235053175865386/1143350823779315924/chain.svg',
+    icon: chainIcon,
     title: 'Burn The Bridges',
-    description: 'Bridge-less omnichain swaps. Swap between any two chains without a bridge.',
+    description: 'Bridge-less omnichain swaps. Swap between any two chains with ease.',
   },
   {
-    icon: 'https://cdn.discordapp.com/attachments/806235053175865386/1143350822944653413/drop.svg',
+    icon: dropIcon,
     title: 'Concentrated Unified Liquidity',
-    description: 'Concentrated liquidity pools. Higher capital efficiency and lower slippage.',
+    description:
+      'Rent liquidity at a fraction of the cost, maximizing efficiency with less capital. A fully decentralized solution.',
   },
   {
-    icon: 'https://cdn.discordapp.com/attachments/806235053175865386/1143350823309549628/globe.svg',
+    icon: globeIcon,
     title: 'Liquidity management',
-    description: 'Manage your liquidity in a decentralized way. UniV3 way. No more impermanent loss.',
+    description:
+      "Streamline your liquidity with TALOS, MaiaDAO's tool for effortless and composable liquidity management.",
   },
   {
-    icon: 'https://cdn.discordapp.com/attachments/806235053175865386/1143350824538484766/moneybag.svg',
+    icon: moneybagIcon,
     title: 'Incentivized Liquidity',
     description:
-      'Earn rewards for providing liquidity. Earn more rewards for providing liquidity to less liquid pools.',
+      'Maximize your returns: Provide liquidity and reap enhanced rewards through our leading Bribe and Emission efficiency system.',
   },
   {
-    icon: 'https://cdn.discordapp.com/attachments/806235053175865386/1143350824848859256/swap.svg',
+    icon: swapIcon,
     title: 'Refined ve(3,3) mechanism',
     description:
-      'Now ERC4626 compliant. More efficient and fairer than ever before. Provides more control to the users.',
+      'Maintain maximum voting exposure effortlessly, without the burden of weekly tasks thanks to $bHERMES.',
   },
   {
-    icon: 'https://cdn.discordapp.com/attachments/806235053175865386/1143350824211324928/leaf.svg',
+    icon: leafIcon,
     title: 'Omnichain Yield Marketplace',
     description:
-      'Marketplace for yield farming. Earn yield on any chain. No more chain hopping. Hermes does it for you.',
+      'A comprehensive, one-stop solution for yield farming across any chain. Seamlessly manage and maximize your yields without the hassle of chain hopping.',
   },
 ]
 
@@ -117,7 +126,7 @@ const Features = () => {
     grid-template-columns: 1fr 1fr;
     row-gap: 48px;
     column-gap: 28px;
-    margin: 0 auto 160px;
+    margin: 0 auto;
     width: 100%;
 
     @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
@@ -145,7 +154,7 @@ const Features = () => {
     }
   `
 
-  const RenderedFeatures = FEATURES_DATA.map((feature, index) => {
+  const renderedFeatures = FEATURES_DATA.map((feature, index) => {
     return (
       <Feature
         icon={feature.icon}
@@ -157,10 +166,10 @@ const Features = () => {
   })
 
   return (
-    <>
+    <div>
       <FeaturesTitle>Features</FeaturesTitle>
-      <FeaturesContainer>{RenderedFeatures}</FeaturesContainer>
-    </>
+      <FeaturesContainer>{renderedFeatures}</FeaturesContainer>
+    </div>
   )
 }
 
