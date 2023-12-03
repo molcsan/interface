@@ -7,7 +7,7 @@ const Footer = styled.div`
   //border-top: 1px solid rgba(75, 75, 75, 0.4);
   //border-top: 1px solid rgba(255, 255, 255, 0.14);
   padding-top: 50px;
-  background-color: #0b0f40;
+  background-color: transparent;
   padding-bottom: 80px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
