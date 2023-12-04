@@ -3,6 +3,8 @@ import styled, { useTheme } from 'styled-components/macro'
 
 import CoinImage4 from '../../assets/images/maia/coin-4.png'
 import CoinImage5 from '../../assets/images/maia/coin-5.png'
+import Maia2Image from '../../assets/images/maia/maia-2.png'
+import MaiaCoinsImage from '../../assets/images/maia/maiacoins.png'
 import { ChevronRightIcon } from '../../nft/components/icons'
 import Banner, { BannerImage, BannerText, BannerTitle } from './Banner'
 import { HermesCoin } from './HermesSection'
@@ -99,10 +101,7 @@ export default function MaiaSection() {
             </HermesButton>
           </MaiaContent>
           <MaiaImageCard data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-            <img
-              src="https://cdn.discordapp.com/attachments/1055440737149386763/1065141039372976189/maia-2.png"
-              alt="Hermes"
-            />
+            <img src={Maia2Image} alt="Hermes" />
           </MaiaImageCard>
           <SecondCoin>
             <Levitating offsetOfCycle={0.1}>
@@ -135,7 +134,7 @@ export default function MaiaSection() {
           </StatCol>
         </StatsGrid>
         <Banner>
-          <BannerImage src={MAIA_IMAGE} />
+          <BannerImage src={MaiaCoinsImage} />
           <BannerTitle>
             GOVERNED BY <span style={{ color: '#dd3aff' }}>$sMAIA</span>
           </BannerTitle>
