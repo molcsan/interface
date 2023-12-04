@@ -4,7 +4,7 @@ on:
   schedule:
     # Download translations every hour.
     # This is not done as part of the build so that builds remain reproducible.
-    - cron: '0 * * * *'
+    #- cron: '0 * * * *'
   # manual trigger
   workflow_dispatch:
 
