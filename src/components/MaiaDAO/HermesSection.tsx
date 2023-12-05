@@ -301,6 +301,17 @@ export default function HermesSection() {
           </StatCol>
         </StatsGrid>
         <CardGrid>
+         <TransparentCard>
+            <MaiaCardTitle>ALL AROUND PLATFORM</MaiaCardTitle>
+            <MaiaCardDescription>
+              <span style={{ color: '#dd3aff' }}>Traders</span> can enjoy low slippage thanks to a concentrated liquidity, ensuring low slippage and the freedom to
+              swap across any chain of their choice. <span style={{ color: '#dd3aff' }}>Liquidity Providers</span> will appreciate the opportunity to supply liquidity 
+              to a selected gauge (pool), gaining not only concentrated rewards within their chosen position range but also 
+              exposing their liquidity to traders across the Omnichain. <span style={{ color: '#dd3aff' }}>Projects</span> can leverage the most efficient liquidity 
+              renting available, achieving maximum depth with minimal expenditure, while exposing their liquidity to the entire Omnichain ecosystem
+            </MaiaCardDescription>
+            <HermesButton>Read more</HermesButton>
+          </TransparentCard>
           <TransparentCard>
             <MaiaCardTitle>
               BURN YOUR <span style={{ color: '#dd3aff' }}>$HERMES</span>
@@ -311,15 +322,6 @@ export default function HermesSection() {
               governance and rewards. Deposit into the Burner ERC-4626 Vault for{' '}
               <span style={{ color: '#dd3aff' }}>$bHERMES</span> shares, offering control over emissions, amplified
               earnings, and decisive governance influence in the evolving Hermes Protocol ecosystem
-            </MaiaCardDescription>
-            <HermesButton>Read more</HermesButton>
-          </TransparentCard>
-          <TransparentCard>
-            <MaiaCardTitle>LOREM IPSUM</MaiaCardTitle>
-            <MaiaCardDescription>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna ac nibh feugiat
-              imper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna ac nibh
-              feugiat imper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum magna.
             </MaiaCardDescription>
             <HermesButton>Read more</HermesButton>
           </TransparentCard>
