@@ -3,7 +3,7 @@ import styled, { useTheme } from 'styled-components/macro'
 
 import CoinImage4 from '../../assets/images/maia/coin-4.png'
 import CoinImage5 from '../../assets/images/maia/coin-5.png'
-import Maia2Image from '../../assets/images/maia/maia-2.png'
+import Maia2Image from '../../assets/images/maia/maia-3.png'
 import MaiaCoinsImage from '../../assets/images/maia/maiacoins.png'
 import { ChevronRightIcon } from '../../nft/components/icons'
 import Banner, { BannerImage, BannerText, BannerTitle } from './Banner'
