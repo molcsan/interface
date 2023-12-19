@@ -29,7 +29,7 @@ export const WidePageWrapper = styled.div`
   padding: 0 40px 0;
   display: flex;
   flex-direction: column;
-  gap: 420px;
+  gap: 380px;
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.xl}px`}) {
     padding-top: 20px;

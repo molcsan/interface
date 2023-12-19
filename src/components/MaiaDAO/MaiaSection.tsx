@@ -3,8 +3,8 @@ import styled, { useTheme } from 'styled-components/macro'
 
 import CoinImage4 from '../../assets/images/maia/coin-4.png'
 import CoinImage5 from '../../assets/images/maia/coin-5.png'
-import Maia2Image from '../../assets/images/maia/maia-4.png'
-import MaiaCoinsImage from '../../assets/images/maia/maiacoins.png'
+import Maia2Image from '../../assets/images/maia/maia-4.webp'
+import MaiaCoinsImage from '../../assets/images/maia/maiacoins.webp'
 import { ChevronRightIcon } from '../../nft/components/icons'
 import Banner, { BannerImage, BannerText, BannerTitle } from './Banner'
 import { HermesCoin } from './HermesSection'
@@ -93,8 +93,8 @@ export default function MaiaSection() {
             <HermesSmall>Maia</HermesSmall>
             <HermesTitle>The gateway to yields of DeFi!</HermesTitle>
             <Text fontSize={16} fontWeight={300} color={theme.textSecondary} lineHeight={1.55} marginBottom={24}>
-              Maia aims to be a one stop shop for different financial instruments, a fully fledged trading hub with
-              Hermes being the first piece of the puzzle. In order to sustainably bootstrap our surrounding ecosystem.
+              Maia is a one stop shop for DeFi native financial instruments, a fully fledged trading hub. It all starts
+              with Hermes, which allows Maia to sustainably bootstrap our surrounding ecosystem.
             </Text>
             <HermesButton>
               Swap <ChevronRightIcon />

@@ -1,0 +1,12 @@
+rm -rf "./src/locales/*.js"
+rm -rf "./src/locales/en-US.po"
+rm -rf "./src/locales/pseudo.po"
+rm -rf "./src/types/v3"
+rm -rf "./src/abis/types"
+rm -rf "./src/graphql/data/schema.graphql"
+rm -rf "./src/graphql/thegraph/generated"
+rm -rf "./src/graphql/thegraph/schema.graphql"
+rm -rf "./src/graphql/data/__generated__"
+rm -rf "./src/graphql/data/nft/__generated__"
+rm -rf "./node_modules/"
+yarn && yarn start

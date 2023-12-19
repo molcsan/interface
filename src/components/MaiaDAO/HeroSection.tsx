@@ -1,6 +1,7 @@
 import { Text } from 'rebass'
 import styled from 'styled-components/macro'
 
+import heroImage from '../../assets/images/maia/maia-hero.webp'
 import backgroundImage from '../../assets/images/maia-hero-bg.jpg'
 import { HermesButton } from './HermesSection'
 import Parallax from './Parallax'
@@ -135,16 +136,14 @@ export default function HeroSection() {
       <HeroSectionContent>
         <HeroSectionTitle>Maia DAO</HeroSectionTitle>
         <HeroSectionDescription>
-          Maian ecosystem is one-stop shop for different DeFi native financial instruments, a fully fledged trading hub.
+          The Maian ecosystem is one-stop shop for advanced DeFi native financial instruments, a fully fledged omnichain
+          trading hub.
         </HeroSectionDescription>
         <HermesButton>Read More</HermesButton>
       </HeroSectionContent>
       <HeroSectionImage>
         <Parallax speedDivider={16} invert={true}>
-          <img
-            src="https://maiadao-front-1id71tint-binomio.vercel.app/static/media/bg-section3.a43dbe35.png"
-            alt="placeholder"
-          />
+          <img src={heroImage} alt="placeholder" />
         </Parallax>
       </HeroSectionImage>
     </HeroSectionContainer>

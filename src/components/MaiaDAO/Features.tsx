@@ -51,62 +51,62 @@ interface IFeatureProps {
   description: string
 }
 
-const Feature = (props: IFeatureProps) => {
-  const FeatureContainer = styled.div`
-    display: grid;
-    grid-template-columns: 100px auto;
+const FeatureContainer = styled.div`
+  display: grid;
+  grid-template-columns: 100px auto;
+  width: 100%;
+  align-items: center;
+  gap: 16px;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    grid-template-columns: 60px auto;
+  }
+`
+
+const FeatureIcon = styled.div`
+  display: flex;
+  height: 80px;
+
+  img {
     width: 100%;
-    align-items: center;
-    gap: 16px;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    height: 60px;
+  }
+`
+
+const FeatureContent = styled.div`
+  h3 {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: #dd3aff;
 
     @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-      grid-template-columns: 60px auto;
-    }
-  `
-
-  const FeatureIcon = styled.div`
-    display: flex;
-    height: 80px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-    }
-
-    @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-      height: 60px;
-    }
-  `
-
-  const FeatureContent = styled.div`
-    h3 {
-      font-size: 20px;
-      margin: 0;
-      padding: 0;
-      line-height: 1.5;
-      text-transform: uppercase;
-      color: #dd3aff;
-
-      @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-        font-size: 16px;
-      }
-    }
-
-    p {
       font-size: 16px;
-      margin: 4px 0 0 0;
-      padding: 0;
-      line-height: 1.5;
-
-      @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-        font-size: 14px;
-      }
     }
-  `
+  }
 
+  p {
+    font-size: 16px;
+    margin: 4px 0 0 0;
+    padding: 0;
+    line-height: 1.5;
+
+    @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+      font-size: 14px;
+    }
+  }
+`
+
+const Feature = (props: IFeatureProps) => {
   return (
     <FeatureContainer>
       <FeatureIcon>
@@ -120,40 +120,40 @@ const Feature = (props: IFeatureProps) => {
   )
 }
 
-const Features = () => {
-  const FeaturesContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 48px;
-    column-gap: 28px;
-    margin: 0 auto;
-    width: 100%;
+const FeaturesContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 48px;
+  column-gap: 28px;
+  margin: 0 auto;
+  width: 100%;
 
-    @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
-      grid-template-columns: 1fr;
-    }
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    grid-template-columns: 1fr;
+  }
 
-    @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-      row-gap: 32px;
-    }
-  `
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
+    row-gap: 32px;
+  }
+`
 
-  const FeaturesTitle = styled.h2`
-    font-size: 42px;
-    font-weight: 600;
+const FeaturesTitle = styled.h2`
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: ${({ theme }) => theme.textPrimary};
+  margin: 0;
+  padding-bottom: 58px;
+  text-align: center;
+
+  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
     line-height: 1.15;
-    color: ${({ theme }) => theme.textPrimary};
-    margin: 0;
-    padding-bottom: 58px;
-    text-align: center;
+    font-size: 32px;
+    padding-bottom: 32px;
+  }
+`
 
-    @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
-      line-height: 1.15;
-      font-size: 32px;
-      padding-bottom: 32px;
-    }
-  `
-
+const Features = () => {
   const renderedFeatures = FEATURES_DATA.map((feature, index) => {
     return (
       <Feature

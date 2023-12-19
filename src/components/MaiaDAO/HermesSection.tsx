@@ -2,7 +2,7 @@ import { Text } from 'rebass'
 import styled, { useTheme } from 'styled-components/macro'
 
 import CoinImage3 from '../../assets/images/maia/coin-3.png'
-import HermesImage from '../../assets/images/maia/hermes-v2.png'
+import HermesImage from '../../assets/images/maia/hermes-v2.webp'
 import { ChevronRightIcon } from '../../nft/components/icons'
 import { ButtonSecondary } from '../Button'
 import Levitating from './Levitating'
@@ -301,14 +301,17 @@ export default function HermesSection() {
           </StatCol>
         </StatsGrid>
         <CardGrid>
-         <TransparentCard>
+          <TransparentCard>
             <MaiaCardTitle>ALL AROUND PLATFORM</MaiaCardTitle>
             <MaiaCardDescription>
-              <span style={{ color: '#dd3aff' }}>Traders</span> can enjoy low slippage thanks to a concentrated liquidity, ensuring low slippage and the freedom to
-              swap across any chain of their choice. <span style={{ color: '#dd3aff' }}>Liquidity Providers</span> will appreciate the opportunity to supply liquidity 
-              to a selected gauge (pool), gaining not only concentrated rewards within their chosen position range but also 
-              exposing their liquidity to traders across the Omnichain. <span style={{ color: '#dd3aff' }}>Projects</span> can leverage the most efficient liquidity 
-              renting available, achieving maximum depth with minimal expenditure, while exposing their liquidity to the entire Omnichain ecosystem
+              <span style={{ color: '#dd3aff' }}>Traders</span> can enjoy low slippage thanks to a concentrated
+              liquidity, ensuring low slippage and the freedom to swap across any chain of their choice.{' '}
+              <span style={{ color: '#dd3aff' }}>Liquidity Providers</span> will appreciate the opportunity to supply
+              liquidity to a selected gauge (pool), gaining not only concentrated rewards within their chosen position
+              range but also exposing their liquidity to traders across the Omnichain.{' '}
+              <span style={{ color: '#dd3aff' }}>Projects</span> can leverage the most efficient liquidity renting
+              available, achieving maximum depth with minimal expenditure, while exposing their liquidity to the entire
+              Omnichain ecosystem
             </MaiaCardDescription>
             <HermesButton>Read more</HermesButton>
           </TransparentCard>
