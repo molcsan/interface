@@ -118,9 +118,8 @@ const HeroSectionImage = styled.div`
     width: 100%;
     height: auto;
     object-fit: contain;
-    box-shadow: rgba(17, 17, 26, 0.7) 0px 12px 16px, rgba(17, 17, 26, 0.7) 0px 24px 24px,
-      rgba(17, 17, 26, 0.7) 0px 48px 56px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    filter: drop-shadow(0px 12px 16px rgba(17, 17, 26, 0.7)) drop-shadow(0px 24px 24px rgba(17, 17, 26, 0.7))
+      drop-shadow(0px 48px 56px rgba(17, 17, 26, 0.7));
   }
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.lg}px`}) {
